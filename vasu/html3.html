@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <body>
+<pre align=center><h1>
+        <i>KM Custom HTML Form Example Using AppleScript</i>
+    </h1>
+<h6>(by JMichaelTX)</h6>
+</pre>
+<table border="2" cellspacing="0" bgcolor="#cc9966"><center> 
+    <form>
+        <tr>
+            <td><label for="name"><strong>Name:</strong></label></td>
+            <td><input type="text" name="Name" value="John AppleScript"> </td>
+        </tr>
+        <tr>
+            <td><label for="email"><strong>Email:</strong></label></td>
+            <td><input type="email" name="email" value="johnny@AppleScript.com"></td>
+        </tr>
+        <tr>
+            <td><label for="pass"><strong>Password:</strong></label></td>
+            <td><input type="password" name="pass" value="bhjas"></td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><strong>Approval Required:</strong>click on the button or text to check/uncheck</p>
+            </td>
+            <td><input type="checkbox" id="requirement" name="requirement" value="Do you approve?">
+                <label for="requirement">Do you approve?</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Pick your Favorite:</strong></p>
+                <p>click on the button or text to select.</p>
+            </td>
+
+            <td>
+                <input type="radio" id="A" name="choice" value="A">
+                <label for="A">choice A</label> <br>
+                <input type="radio" id="B" name="choice" value="B">
+                <label for="B">choice B</label><br>
+                <input type="radio" id="C" name="choice" value="C">
+                <label for="C">choice C</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Popup Menu:</strong></p>
+            </td>
+            <td>
+                <select name="scroll" id="tx">
+                    <option value="1">Texas --TX</option>
+
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>List</strong> setup Options:</p>
+                <p></p>
+                <ul>
+                    <li>Number of rows to display</li>
+                    <li>Allow Multi-select</li>
+                </ul>
+            </td>
+            <td>
+                <select name="drop" id="down" size="5">
+                    <option value="2">California-- CA</option>
+                    <option value="3">Colorado--CO</option>
+                    <option value="4">Connecticut--CN</option>
+                    <option value="5">Dalifornia--DA</option>
+                    <option value="5">Dolardo--DO</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="KM"><strong>Field Ignored by KM</strong></label>
+            </td>
+            <td> <input type="text" name="KM" value="10,384"><br></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="text area"><strong>Text Area</strong></label>
+            </td>
+            <td><textarea id="text area" name="text" rows="5"
+                    cols="40">Now is the time for all good men to the aid of their country</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2" align="left">
+                <button border="blue" id="save">save</button>
+                <button id="cancel">cancel</button>
+                <button id="resize">resize</button>
+            </th>
+        </tr>
+    </form>
+</center>
+</table>
+</body>
+</html>
