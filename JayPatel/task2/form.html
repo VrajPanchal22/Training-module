@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body bgcolor="#f3e2d1" > 
+    <center>
+        <div>
+            <h2>KM Custom HTML Form Example Using AppleScript</h2>
+            <p>(by JMichaelTX)</p>
+        </div>
+        <form>
+            <table bgcolor="#e0b78c" border="1" cellpadding="10" >
+                <tr>
+                    <td>
+                        <h4>Name:</h4>
+                    </td>
+                    <td>
+                        <input type="text" name="name" placeholder="Enter your name" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Email:</h4>
+                    </td>
+                    <td>
+                        <input type="email" name="email" placeholder="Enter your mail" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Password:</h4>
+                    </td>
+                    <td>
+                        <input type="password" name="name" placeholder="Enter password" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Approval Required:</h4>
+                        <pre>click on the button or text to 
+    check/uncheck</pre>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="approve" id="approve">
+                        <label for="approve">Do you approve?</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Pick Your Favorite:</h4>
+                        <pre>click on the button or text to
+    select.
+                        </pre>
+                    </td>
+                    <td>
+                        <input type="radio" name="choices" id="choiceA">
+                        <label for="choiceA">Choice A</label>
+                        <br>
+                        
+                        <input type="radio" name="choices" id="choiceB">
+                        <label for="choiceB">Choice B</label>
+                        <br>
+
+                        <input type="radio" name="choices" id="choiceC">
+                        <label for="choiceC">Choice C</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Popup Menu:</h4>
+                    </td>
+                    <td>
+                        <select name="cars" id="cars" >
+                            <option value="Texas -- TX">Texas -- TX</option> 
+                            <option value="Canada -- ca">Canada -- ca</option> 
+                            <option value="Cocos Islands -- cc">Cocos Islands -- cc</option>
+                            <option value="India -- in">India -- in</option>   
+                            <option value="Italy -- it">Italy -- it</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>List</h4>
+                        <p>Setup Options:</p>
+                        <ul>
+                            <li>Number of rows to display</li>
+                            <li>Allow Multi-select</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <select name="lists" id="lists" size="8" multiple >
+                            <option value="California -- CA">California -- CA</option>
+                            <option value="Colorado -- CO">Colorado -- CO</option>
+                            <option value="Connecticut -- CN">Connecticut -- CN</option>
+                            <option value="Dalifornia -- DA">Dalifornia -- DA</option>
+                            <option value="Dolorado -- DO">Dolorado -- DO</option>
+                            <option value="California -- CA">California -- CA</option>
+                            <option value="Colorado -- CO">Colorado -- CO</option>
+                            <option value="Connecticut -- CN">Connecticut -- CN</option>
+                            <option value="Dalifornia -- DA">Dalifornia -- DA</option>
+                            <option value="Dolorado -- DO">Dolorado -- DO</option>
+                            <option value="California -- CA">California -- CA</option>
+                            <option value="Colorado -- CO">Colorado -- CO</option>
+                            <option value="Connecticut -- CN">Connecticut -- CN</option>
+                            <option value="Dalifornia -- DA">Dalifornia -- DA</option>
+                            <option value="Dolorado -- DO">Dolorado -- DO</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Feild Ignored by KM</h4>
+                    </td>
+                    <td>
+                        <input type="text" name="ignoredByKm" id="ignoredByKm">
+                    </td>
+                </tr>
+                <tr>
+                    <td>    
+                        <h4>TextArea</h4>
+                    </td>
+                    <td>
+                        <Textarea rows="6" cols="50" ></Textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <button type="submit" bgcolor="blue" >Save</button>
+            <button type="reset">Cancel</button>
+            <button disabled="disabled">Resize</button>
+
+
+        </form>
+
+    </center>
+</body>
+</html>
