@@ -1,0 +1,170 @@
+body{
+    background-image:url(/card.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    margin-left:4vw; 
+    
+}
+/* .card{
+    border:2px solid black;
+    width:90vw;
+    height:48vw;
+    margin:2vw 5vw;
+     background-image: url(/card.png);
+    background-size: cover;
+    justify-content: center;
+
+
+}  */
+*{
+    font-size:1vw;
+    box-sizing: border-box;
+}
+.card__block1{
+    border:2px solid black;
+    width:40vw;
+    /* width: 25%; */
+    height: 80vh;
+    position:absolute;
+    margin:2vw 0vw 2vw 2vw;
+    top: 2vw;
+    /* background-image: url(/block1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover; */
+    background-color: rgba(58,178,152);
+    color:white;
+    justify-items: center;
+
+
+    
+}
+
+.card__logo{
+    border:2px solid white;
+    position:absolute;
+    top: 1vw;
+    left:1vw;
+    width:2vw;
+    height:2vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    
+
+
+}
+.card__block2{
+    justify-items:center;
+    border:2px solid black;
+    width:50vw;
+    /* width: 75%; */
+    /* height: 50%; */
+    position:absolute;
+    top:2vw;
+    left:40vw;
+    margin:2vw 0vw 2vw 2vw;
+    height: 80vh;
+    background-color: rgba(255,255,255,255);
+    /* background-image: url(/block2.avif);
+    background-size: cover;
+    
+    background-repeat: no-repeat; */
+    
+    
+
+}
+
+.card__content{
+    position:absolute;
+    top: 1.5vw;
+    left:3.5vw;
+    width:3vw;
+    height:2vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+
+    
+}
+.card__welcome{
+    /* text-align: center; */
+    /* margin-left:10vw; */
+    margin-bottom: 1vw;
+    margin:0 10vw 0 12vw;
+}
+.card__des{
+    /* text-align: center; */
+    margin-left:5vw;
+    color:white;
+    justify-content: center;
+    
+}
+.btn{
+    text-align:center;
+    margin-left:12vw;
+    background-color:rgba(58,178,152);
+    border-radius: 1.5vw;
+    color:white;
+    width:10vw;
+    height:5vh;
+    border-color: white;
+
+
+}
+.btn2{
+    margin-left:20vw;
+    background-color:#3aaea1;
+    border-radius: 1.5vw;
+    color:white;
+    width:10vw;
+    height:5vh;
+
+}
+.card__link1{
+    color:black;
+    border:1px solid black;
+    text-decoration: none;
+    border-radius: 45%;
+    padding:0.4vh 0 0.4vh 0;
+    font-weight: bold;
+    margin-left: 21.5vw;
+
+}
+.card__link2{
+    color:black;
+    border:1px solid black;
+    text-decoration: none;
+    border-radius: 45%;
+    padding:0.4vh 0.5vw 0.4vh 0.5vw;
+    font-weight: bold;
+    
+
+}
+.card__link3{
+    color:black;
+    border:1px solid black;
+    text-decoration: none;
+    border-radius: 45%;
+    padding:0.4vh 0.2vw 0.4vh 0.2vw;
+    font-weight: bold;
+
+}
+.card__create{
+    color:#3aaea1;
+    margin-left:20vw;
+    margin-top:14vh;
+    font-weight: bold;
+}
+.card__other{
+    color:rgba(198,198,198);
+    margin-left:16vw;
+    font-size:1rem;
+}
+.card__input{
+    margin-left:14vw;
+    width:21vw;
+    height:4vh;
+    padding-left:1vw;
+}
