@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    max-width: 100%;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 100px;
+
+}
+.card__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    background-color: #1A7CFA;
+    color: #fff;
+    height: 500px;
+    margin-left: 0;
+}
+.card__p {
+    padding: 15px 0px;
+    line-height: 25px;
+}
+.card__body {
+    margin-left: 32px;
+    margin-top: 15px;
+}
+.card__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 500px;
+    background-color: white;
+}
+.form {
+    width: 250px;
+    flex-direction: column;
+    padding: 0 20px;
+}
+.form__input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: white;
+    outline: none;
+    border-radius: 5px;
+    border: solid 1px rgb(170, 170, 170);
+}
+.form__input:focus {
+    background-color: white;
+}
+.form__heading {
+    color: #0095ff;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: bold;
+    font-size: 20px;
+}
+.form__signup {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 0px;
+    color: grey;
+}
+.form--lightblue {
+    color: #0095ff;
+    cursor: pointer;
+}
+.form__pwd {
+    text-decoration: none;
+    color: #0095ff
+}
+.form__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form__or {
+    background: white;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px;
+    margin: 20px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.btn--blue {
+    width: 100%;
+    background-color: #1A7CFA;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button--darkblue,
+.button--red {
+    width: 120px;
+    padding: 3px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+.button--darkblue {
+    background-color: #3b5998;
+    padding: 10px;
+}
+.button--red {
+    background-color: red;
+    padding: 10px;
+}
+@media screen and (max-width: 280px) {
+    .card__left {
+        display: none;
+    }
+    .card__right {
+        width: 100%;
+    }
+    .form {
+        width: 80%;
+        padding: 20em;
+    }
+    .button {
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 375px) {
+    .card__left {
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .card {
+        width: 100%;
+        flex-direction: column;
+    }
+    .card__left {
+        width: 100%;
+        padding: 0px;
+        padding: 50px 0px;
+    }
+    .card__body {
+        width: 260px;
+    }
+    .card__right {
+        width: 100%;
+        padding: 50px 0px;
+    }
+    .form {
+        padding: 0px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .card {
+        width: 88%;
+        margin: 0px;
+    }
+    .card__right {
+        height: 450px;
+    }
+    .card__body {
+        width: 260px;
+        padding: 20px 0px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .img {
+        width: 190px;
+    }
+}
