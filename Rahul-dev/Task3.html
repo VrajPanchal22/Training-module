@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 Form</title>
+</head>
+<body>
+    <h1><center><Strong><em>KM Custom HTML Form Example Using AppleScript</em></Strong></center></h1>
+    <h4><center>(by JMichaelTX)</center></h4>
+    <form action="blank.php" border="1">
+        <table cellpadding="6" align="center" width="100%" border="1" bgcolor="#CC9955">
+            <tr>
+        <td><label for="name"><strong> Name:</strong></label>
+        </td>
+        <td>
+        <input type="text" name="name"> 
+    </td>
+    </tr>
+    <tr>
+        <td>
+        <label for="Email"><strong> Email: </strong></label>
+    </td>
+    <td>
+        <input size="80px"type="email" name="Email"> 
+    </td>
+
+    </tr>
+    <tr>
+        <td>
+        <label for="pwd"><strong> Password: </strong></label>
+    </td>
+    <td>
+        <input type="password" name="pwd"> 
+    </td>
+    </tr>
+        <tr>
+           <td> <label for="App"></label> <strong> Approval Required: </strong><br>click on the button or text to check/uncheck.
+            <td>
+                <input type="checkbox">Do you approve?
+            </td>
+                
+    </tr>
+        <tr>
+            <td> <strong> Pick your Favorite: </strong><br>
+                Click on the button or text <br>
+            Select</td>
+            <td><input type="radio" name="fav">Choice A <br>
+        
+        
+    
+            <input type="radio" name="fav">Choice B <br><input type="radio"
+                name="fav">Choice C
+            </td>
+        </tr>
+        <tr>
+            <td> <strong>Popup Menu: </strong></td>
+            <td>
+                <select name="menu" id="menu">
+                    <option value="texas">Texas -- TX</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><strong> List </strong><br>
+                
+            Setup options <br>
+        <ul>
+            <li>
+                Number of rows to display
+            </li>
+            <li>
+                Allow Multi-select
+            </li>
+        </ul></td>
+        <td>
+            <select multiple name="list" id="list">
+                <option value="1">California -- CA</option>
+                <option value="2">Colorado -- CO</option>
+                <option value="3">Connecticut -- CC</option>
+                <option value="4">
+                    Dalifornia -- DA
+                </option>
+                <option value="5">Dolorado -- DO</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td><strong> Field Ignored by KM </strong> </td>
+            <td>
+                <input type="number">
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Text Area </strong></td>
+            <td><textarea name="ta" id="ta" cols="80" rows="10"></textarea></td>
+        </tr>
+        <tr>
+           
+        </tr>
+    </table>
+    <br>
+
+    <button type="button" bgcolor="Blue" >Save</button>
+    <button type="button" bgcolor="white">Cancel</button>
+    <button type="button" bgcolor="grey">Resize</button>
+
+
+       
+
+
+
+
+
+    </form>
+
+    
+    
+</body>
+</html>
