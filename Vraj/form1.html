@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body   bgcolor="#f3e2d1" > 
+    <div >    
+        <table bgcolor="#E8BEAC" border="1" align="center" cellpadding="5">
+        <caption>
+            <i><b>KM Custom HTML From Example Using AppleScript</b></i></h3>
+            <p>(by JMichealTX)</p>
+        </caption> 
+        <form action="">
+            <tr>
+                <th align="left"><label for="name">Name:</label></th>
+                <td><input type="text" name="" id="name"></td>
+            </tr>
+            <tr>
+                <th align="left"><label for="email">Email:</label></th>
+                <td><input type="email" name="email" id="" width="100%"></td>
+            </tr>
+            <tr>
+                <th align="left"><label for="pwd">Password:</label></th>
+                <td><input type="password" name="" id="pwd"></td>
+            </tr>
+            <tr>
+                <td align="left"><strong>Approval Required:</strong> <br>
+                Click on the button or text to <br> 
+                check/uncheck.</td>
+                <td valign="top">
+                    <input type="checkbox" name="approve" id="approve" value="approved">
+                    <label for="approve">Do You approve?</label>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><strong>Pick YOur Favorite:</strong> <br>
+                Click on the button or text to <br>
+                select.</td>
+                <td>
+                    <input type="radio" name="pick_fav" id="A" value="choice-a">
+                    <label for="A">Choice A</label> <br>
+                    <input type="radio" name="pick_fav" id="B" value="choice-b">
+                    <label for="B">Choice B</label> <br>
+                    <input type="radio" name="pick_fav" id="C" value="choice-c  ">
+                    <label for="C">Choice C</label>
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="cities">Popup Menu:</label></th>
+                <td cellpadding="0">
+                    <select name="cities" id="cities">
+                        <option value="texas">Texas -- TX</option>
+                        <option value="califonia">Califonia -- CA</option>
+                        <option value="atlanta">Atlanta -- AT</option>
+                        <option value="lasvegas">Las Vegas -- LA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <strong>List <br> </strong>
+                    Setup Options:
+                    <ul>
+                        <li>Number of rows to display</li>
+                        <li>Allow Multi-select</li>
+                    </ul>
+                </td>
+                <td>
+                    <select name="cities" id="cities" size="6">
+                        <option value="texas">Texas -- TX</option>
+                        <option value="califonia">Califonia -- CA</option>
+                        <option value="atlanta">Atlanta -- AT</option>
+                        <option value="lasvegas">Las Vegas -- LA</option>
+                        <option value="Dolorado">Dolorado -- DO</option>
+                        <option value="dalifornia">Connecticut -- CN</option>
+                        <option value="dalifornia">Dalifornia -- DO</option>
+                        <option value="dalifornia">Colorado -- CO</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th align="left"><label for="km">Field Ignored by KM</label></th>
+                <td><input type="text" name="kilometers" id="km"></td>
+            </tr>
+                <tr align="left"><th><label for="para">Text Area</label></th>
+                <td><textarea name="textarea" id="para" cols="50" rows="5"></textarea></td>
+            </tr>
+
+        </form>
+        
+    </table>
+    <div  align="center">  
+        <input type="button" value="Save">
+        <input type="button" value="Cancel">
+        <input type="button" value="Resize">
+    </div>
+</div>
+
+  
+</body>
+</html>
