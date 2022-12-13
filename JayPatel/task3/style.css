@@ -1,0 +1,252 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    display: flex;
+    background-color: #f6f5f7;
+    height: 100vh;
+    width: 100vw;
+}
+
+.mini-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: max(60%, 800px);
+    max-width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 3px 10px #000;
+    border-radius: 10px;
+}
+
+/* ------------------------------------------------ */
+
+.form-container {
+    display: flex;
+    flex: 1;
+    width: 50%;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.form-minicontainer {
+    display: flex;
+    flex: 19;
+    flex-direction: column;
+    padding: 40px;
+}
+
+/* ------------------------------------------------------- */
+
+.heading {
+    display: flex;
+    flex: 5;
+    align-items: flex-end;
+}
+
+.heading__text {
+    font-size: max(2.5vw, 25px);
+}
+
+.greeting {
+    display: flex;
+    flex: 2;
+    align-items: center;
+}
+
+.greeting__text {
+    font-size: max(1vw, 13px);
+    font-family: 'Rubik', sans-serif;
+}
+
+
+/* -------------------------------------------- */
+
+.form {
+    display: flex;
+    flex: 10;
+    flex-direction: column;
+}
+
+.form__input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 2.5;
+}
+
+.form__label {
+    font-size: max(0.7rem, 11px);
+    margin: 3px 0;
+}
+
+.form__input {
+    width: 100%;
+    height: max(5vh, 30px);
+    padding-left: 10px;
+    font-size: 1.3em;
+    border: 0;
+    outline: 0;
+    border-radius: 1px;
+    background-color: #f2f2f2;
+}
+
+/* -------------------------------------------- */
+
+.form__rf-container {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remember {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rememberMe {
+    width: max(1vw, 20px);
+    height: max(1vw, 20px);
+    margin-right: 10px;
+}
+
+.rf-container--fontsize {
+    font-size: 0.8rem;
+}
+
+
+
+/* -------------------------------------------- */
+
+.form__buttons {
+    display: flex;
+    flex: 1;
+    height: 5vh;
+}
+
+.buttons__btn {
+    display: inline-block;
+    flex: 2;
+    text-align: center;
+    line-height: 4vh;
+    border-radius: 10px;
+}
+
+.buttons__btn--submit {
+    margin-right: 10px;
+    background-color: #d430b4;
+    border: 1px solid #d430b4;
+    color: #fff;
+}
+
+.buttons__btn--createAccount {
+    margin-left: 10px;
+    border: 1px solid #d430b4;
+    background-color: #fff;
+    color: #d430b4;
+}
+
+
+/* -------------------------------------------- */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+
+.footer__text {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5px;
+}
+
+.footer__logo {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-weight: bold;
+    color: #d430b4;
+}
+
+.footer__logo p:first-child {
+    padding-right: 10px;
+}
+
+.footer__logo p:last-child {
+    padding-left: 10px;
+}
+
+.forgot-pass-text {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.footer--font-size {
+    font-size: 0.8rem;
+}
+
+
+
+/* -------------------------------------------------- */
+
+.image-container {
+    display: flex;
+    flex: 1;
+    width: 50%;
+}
+
+.image-container__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+}
+
+
+
+/* --------------------------------------------------- */
+
+
+@media only screen and (max-width: 700px) {
+
+    .mini-container {
+        height: 100%;
+        background: url("img.png") no-repeat;
+        background-size: cover;
+        color: #fff;
+    }
+
+    .forgot-pass-text {
+        color: #fff;
+    }
+
+    .form__buttons {
+        flex: 3;
+        flex-direction: column;
+    }
+
+    .buttons__btn {
+        height: 10vh;
+        margin-top: 5px;
+    }
+
+    .buttons__btn--submit {
+        margin-right: 0px;
+    }
+
+    .buttons__btn--createAccount {
+        margin-left: 0px;
+    }
+
+    .image-container {
+        display: none;
+    }
+}
