@@ -21,7 +21,7 @@ body{
 
 }  */
 *{
-    font-size:1vw;
+    font-size:1.1vw;
     box-sizing: border-box;
 }
 .card__block1{
@@ -37,7 +37,7 @@ body{
     background-size:cover; */
     background-color: rgba(58,178,152);
     color:white;
-    justify-items: center;
+    justify-content: center;
 
 
     
@@ -57,7 +57,7 @@ body{
 
 }
 .card__block2{
-    justify-items:center;
+    justify-content:center;
     border:2px solid black;
     width:50vw;
     /* width: 75%; */
@@ -96,7 +96,7 @@ body{
 }
 .card__des{
     /* text-align: center; */
-    margin-left:5vw;
+    margin-left:18vw;
     color:white;
     justify-content: center;
     
@@ -154,13 +154,14 @@ body{
 .card__create{
     color:#3aaea1;
     margin-left:20vw;
-    margin-top:14vh;
+    margin-top:20vh;
     font-weight: bold;
 }
 .card__other{
     color:rgba(198,198,198);
-    margin-left:16vw;
+    margin-left:18vw;
     font-size:1rem;
+    font-size:0.8vw;
 }
 .card__input{
     margin-left:14vw;
