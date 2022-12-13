@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Rubik&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- main container -->
+    <div class="container">
+        <!-- mini container -->
+        <div class="mini-container">
+
+            <!-- form container -->
+            <div class="form-container">
+                <div class="form-minicontainer">
+                    <!-- title -->
+                    <div class="heading">
+                        <h1 class="heading__text">Welcome back to <br> Pretty Login</h1>
+                    </div>
+
+                    <!-- greeting msg -->
+                    <div class="greeting">
+                        <p class="greeting__text">It's great to have you back!</p>
+                    </div>
+
+                    <form class="form">
+
+                        <!-- email -->
+                        <div class="form__input-container">
+                            <label class="form__label" for="email">EMAIL</label>
+
+                            <input class="form__input" type="email" name="email" id="email">
+                        </div>
+
+                        <!-- password -->
+                        <div class="form__input-container">
+                            <label class="form__label" for="passeword">PASSWORD</label>
+
+                            <input class="form__input" type="password" name="password" id="passeword">
+                        </div>
+
+                        <!-- remember me and forgot password -->
+                        <div class="form__rf-container">
+                            <div class="remember">
+                                <input type="checkbox" name="rememberMe" id="rememberMe">
+                                <label class="rf-container--fontsize" for="rememberMe">Remember me?</label>
+                            </div>
+
+                            <a href="/" class="forgot-pass-text rf-container--fontsize">Forgot passeword?</a>
+
+                        </div>
+
+                        <!-- buttons -->
+                        <div class="form__buttons">
+                            <button class="buttons__btn buttons__btn--submit" type="submit">LOGIN</button>
+                            <button class="buttons__btn buttons__btn--createAccount" type="submit">CREATE
+                                ACCOUNT</button>
+                        </div>
+
+                    </form>
+
+                    <!-- other way to login -->
+                    <div class="footer footer--font-size">
+                        <div class="footer__text">
+                            <p>Or login with</p>
+                        </div>
+
+                        <div class="footer__logo">
+                            <p>Facebook</p>
+                            <p>Google</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- image -->
+            <div class="image-container">
+                <img class="image-container__image" src="img.png" alt="img">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
