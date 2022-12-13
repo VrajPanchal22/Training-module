@@ -23,9 +23,7 @@ body{
     border-radius: 20px;
     background-color: rgba(243,224,226,255);
     margin: auto;
-    box-shadow: 1px 3px 25px 10px rgba(0,0,0,0.3)
-
-
+    box-shadow: 1px 3px 25px 10px rgba(0,0,0,0.3);
 }
 
 .card__block1{
@@ -218,7 +216,7 @@ body{
   }
 
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 800px) {
     .card__block1__header div{
         font-size: 5vw;
     }
@@ -250,4 +248,29 @@ body{
     }
 
     
+  }
+
+  @media only screen and (max-width: 790px) {
+    .main{
+        /* border: 5px solid black; */
+        padding-top: 0;
+        padding-bottom: 0 ;
+    }
+    .card{
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        /* border: 5px solid black; */
+    }
+    .card__block1{
+        height: 50%; 
+        width: 100%;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .card__block2{
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+
+    }
   }
