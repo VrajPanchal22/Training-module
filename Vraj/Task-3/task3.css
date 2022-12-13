@@ -1,0 +1,276 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgba(243,224,226,255);
+}
+.main{
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 120px;
+    margin:auto;
+    width: 100%;
+    height: 100%;
+}
+.card{
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: rgba(243,224,226,255);
+    margin: auto;
+    box-shadow: 1px 3px 25px 10px rgba(0,0,0,0.3);
+}
+
+.card__block1{
+    flex:1;
+    height: 755px; 
+    width: 50%;
+    border-top-left-radius: 20px ;
+    border-bottom-left-radius: 20px;
+    background-color: whitesmoke;
+}
+
+
+.card__block1__header{
+    font-weight: bolder;
+    font-size: 2.72vw;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 80px;
+
+}
+
+.card__block1__icons{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.card__block1__icons img {
+    width: 14%;
+    border-radius: 50%;
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.card__block1__twtlogo{
+    margin-left: 20px;
+}
+
+.form__header{
+    margin-top: 80px;
+    color: #605d5d;
+    font-size: 0.70vw;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-group input{
+    width: 80%;
+}
+
+.input-group__email,.input-group__password{
+    background-color: #eeeeee;
+    color: #605d5d;
+    font-size: 0.98vw;
+    font-weight: bolder;
+    display: block;
+    padding: 12px;
+    margin: auto;
+    border: none;
+}
+
+.input-group__password{
+    margin-top: 20px;
+}
+
+.form__footer{
+    margin-top: 30px;
+    font-size: 0.98vw;
+    color: #605d5d;
+    text-align: center;
+}
+
+.card__block1__action{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button{
+    font-size: 0.70vw;
+    padding: 15px;
+    color: white;
+    font-weight: bolder;
+    background-color:rgba(255,74,43,255);
+    width: 40%;
+    border-radius: 40px;
+    border: none;
+}
+
+.card__block2{
+    flex: 1;
+    width: 50%;
+    height: 755px;  
+    border-top-right-radius: 20px;  
+    border-bottom-right-radius: 20px ;
+    background-color: rgba(255,67,92,255);
+}
+
+
+.card__block2__header{
+    color: white;
+    font-size: 2.72vw;
+    font-weight: bolder;
+    text-align: center;
+    margin: auto;
+    margin-top: 230px;
+
+}
+
+.card__block2__content{
+    margin-top: 20px;
+    color: white;
+    font-size: 1.36vw;
+    padding: 30px;
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+    .card{
+        width: 60%;
+        height: 80%;
+        flex-direction: column-reverse;
+        background-color: rgba(243,224,226,255);
+        box-shadow: 1px 3px 25px 10px rgba(0,0,0,0.3);
+    
+    }
+    .card__block1{
+        height: 50%; 
+        width: 100%;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .card__block1__action{
+        margin-bottom: 20px;
+    }
+    .card__block2{
+        width: 100%;
+        height: 60%; 
+        border-radius: none;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 20px;
+    }
+    .card__block2__header{
+        color: white;
+        font-size: 4vw;
+        font-weight: bolder;
+        margin-top: 60px;
+    
+    }
+    
+    .card__block2__content{
+        margin-top: 100px;
+        margin-bottom: 100px;
+        font-size: 2.5vw;
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+    .form__header{
+        font-size: 1.7vw;
+    }
+    
+    .input-group input{
+        width: 80%;
+    }
+    
+    .input-group__email,.input-group__password{
+        font-size: 1.9vw;
+    }
+    
+    .input-group__password{
+        margin-top: 20px;
+    }
+    
+    .form__footer{
+        font-size: 1.7vw;
+    }
+    
+    .button{
+        font-size: 1.7vw;
+        padding: 15px;
+        color: white;
+        font-weight: bolder;
+        background-color:rgba(255,74,43,255);
+        width: 40%;
+        border-radius: 40px;
+        border: none;
+    }
+  }
+
+
+  @media only screen and (max-width: 800px) {
+    .card__block1__header div{
+        font-size: 5vw;
+    }
+    .card__block1__icons{
+        width: 100%;
+    }
+ 
+    .form__header{
+        font-size: 2.3vw;
+    }
+    
+    .input-group__email,.input-group__password{
+        font-size: 2.5vw;
+    }
+    
+    .form__footer{
+        font-size: 2.5vw;
+    }
+    
+    .button{
+        font-size: 2.5vw;
+    }
+    .card__block2__header{
+        font-size: 6vw;
+    }
+    
+    .card__block2__content{
+        font-size: 3vw;
+    }
+
+    
+  }
+
+  @media only screen and (max-width: 790px) {
+    .main{
+        /* border: 5px solid black; */
+        padding-top: 0;
+        padding-bottom: 0 ;
+    }
+    .card{
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        /* border: 5px solid black; */
+    }
+    .card__block1{
+        height: 50%; 
+        width: 100%;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .card__block2{
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+
+    }
+  }
