@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+</head>
+
+<body>
+    <p><b><i>
+                <center>KM custom HTML form example using applescript</center>
+            </i></b></p>
+    <p>
+        <center>(by jmichaelTX)</center>
+    </p>
+    <form action="#response">
+        <center>
+            <table border="1px" cellspacing="0" cellpadding="3" bgcolor="#cc9966" height="70%">
+                <tr>
+                    <th>Name:</th>
+                    <td><input type="text" name="name" value="John Applescript"><br></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td><input size="60" type="email" name="email" value="johnny@applescript.com"><br></td>
+                </tr>
+                <tr>
+                    <th>Password:</th>
+                    <td><input type="password" name="password" value="1234"><br></td>
+                </tr>
+                <tr>
+                    <th>
+                        approval required:<br>
+                        <small>click on the button or text <br>to select</small>
+                    </th>
+                    <td><input type="checkbox" name="checkbox">Do you approve?</td>
+                </tr>
+                <tr>
+                    <th>
+                        pick your favorite:<br>
+                        <small>click on the button or text to <br>select</small>
+                    </th>
+                    <td><input type="radio" name="chioceA">choice A<br>
+                        <input type="radio" name="chioceB" checked="checked">choice B<br>
+                        <input type="radio" name="chioceC">choice C<br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>popup Menu:</th>
+                    <td height="25px">
+                        <select>
+                            <option value="texas--TX">texas--TX</option>
+                            <option value="abcd">abcd</option>
+                            <option value="rtryt">etref</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>list<br><small>
+                        <p>setup options:</p>
+                        <ul>
+                            <li>number of row to display</li>
+                            <li>allow multi-select</li>
+                        </ul></small>
+                    </th>
+                    <td>
+                        <select name="areas" id="area" size="5">
+                            <option value="california--CA">california--CA</option>
+                            <option value="colorado--CO">colorado--CO</option>
+                            <option value="connecticut--CN">connecticut--CN</option>
+                            <option value="dalifornia--DA">dalifornia--DA</option>
+                            <option value="dolorado--DO">dolorado--DO</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>field ignored by KM</th>
+                    <td><input type="text" name="text" value="10,384"></td>
+                </tr>
+                <tr>
+                    <th>text area:</th>
+                    <td><textarea id="textarea" rows="5" cols="55">now is the for all good men to come to the aid of their country
+                </textarea></td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="left">
+                        <button border="blue" id="save">save</button>
+                        <button id="cancle">cancle</button>
+                        <button id="resize">resize</button>
+                    </th>
+                </tr>
+            </table>
+        </center>
+
+    </form>
+
+</body>
+
+</html>
