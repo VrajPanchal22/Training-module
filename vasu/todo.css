@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #66545e;
+
+}
+h1{
+   color: #aa6f73 ;
+}
+.container{
+    width: 350px;
+    height: 400px;
+    background:#a39193 ;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    border-radius: 10px;
+}
+.toDoList{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+    padding: 5px;
+    background: #ffffff;
+    height: 40px;
+    border-bottom: 1px solid black;
+    width: 325px;
+
+}
+.deletetask{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background: blue;
+    align-items: center;
+    margin: 0;
+}
+.pText{
+    background: #ffffff;
+    text-transform: capitalize;
+}
+.inputvalue{
+    display: flex;
+    margin: 5px;
+    margin-right: 5px;
+}
+.inputval{
+    width: 250px;
+    height: 40px;
+    margin-right: 5px;
+    border: 2px solid orange;
+}
+.button{
+    width:100px;
+    background: #097d50;
+    border: 1px solid yellow;
+}
+.cleartask{
+    cursor: pointer;
+    bottom: 5px;
+    left: 15%;
+    background: red;
+    width:250px ;
+    height: 35px;
+    position: absolute;
+}
