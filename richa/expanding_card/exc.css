@@ -1,0 +1,46 @@
+p{
+    display:flex;
+    justify-content:center;
+    font-size:2vw;
+  }
+  .container{
+      width: 80%;
+      display: flex;
+    margin:auto;
+    margin-top:5%;
+  }
+.one{
+    background-image: url(/expanding_card/img/autumn-kquin5jg1dtbyxgc.jpg);
+}
+.two{
+    background-image: url(/expanding_card/img/images.jpeg);
+}
+.three{
+    background-image: url(/expanding_card/img/images\ \(1\).jpeg);
+}
+.four{
+    background-image: url(/expanding_card/img/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.webp);
+}
+.box{
+    height: 80vh;
+    border-radius: 4rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+    margin: 8px;
+    flex: 0.2;
+    transition: all 0.7s ease-out;
+    font-size: 1vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: system-ui;
+}
+.box.active{
+    flex: 3;
+    font-size: 2vw;
+    padding-left: 10%;
+}
