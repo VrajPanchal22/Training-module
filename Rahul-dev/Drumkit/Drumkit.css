@@ -1,0 +1,59 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin:10vw;
+
+}
+span{
+    margin-left:75px;
+    margin-right: 50px;
+    color:yellow;
+}
+.w{
+    background-image: url(/Photos/basedrum.jpg);
+}
+.a{
+    background-image: url(/Photos/cymbal.jpg);
+}
+.s{
+    background-image: url(/Photos/kickdrum.jpg);
+}
+.d{
+    background-image: url(/Photos/snaredrum.jpg);
+}
+.j{
+    background-image: url(/Photos/hanging_drum.jpg);
+}
+.k{
+    background-image: url(/Photos/hihat.jpg);
+}
+.l{
+    background-image: url(/Photos/basspedle.webp);    
+}
+button{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height: 100%;
+    width: 200px;
+    height:500px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+h1{
+    color:white;
+    text-align: center;
+}
+
+.animation {
+        box-shadow: 0 3px 4px 0 #DBEDF3;
+        opacity: 0.5;
+}
+body{
+    background: linear-gradient(red,mediumseagreen,dodgerblue);
+}
