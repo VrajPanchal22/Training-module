@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+}
+.container{
+    padding: 10px;
+    min-height: 90vh;
+    border-radius: 7px;
+    margin: auto;
+}
+button{
+   
+    height: 150px;
+    width: 150px;
+    font-weight: 500px;
+
+    border:none;
+    outline: none;
+}
+.w{
+    background:url('https://media.istockphoto.com/id/1366044447/photo/violin-and-cello-classical-music-background.jpg?b=1&s=170667a&w=0&k=20&c=oOKOxC8RkukGOItggy1t9zpVG3dlLPNFO3vM6vmCByg=') ;
+}
+.a{
+    background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRekVTdsNnrKj6NkbmnO2jRYnrFeSLe5ukqnA&usqp=CAU') ;
+}
+.s{
+    background:url('https://media.istockphoto.com/id/1366111213/photo/close-up-piano-keys-black-and-white.jpg?b=1&s=170667a&w=0&k=20&c=SNxAToiNjOcGnmYtEgVuIlTaDYj2D_vJL7ySF2kEALk=') ;
+}
+.d{
+    background: url('https://images.unsplash.com/photo-1461784121038-f088ca1e7714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bXVzaWNhbCUyMGluc3RydW1lbnRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+}
+.j{
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Kk0LVrFm3OsmhRVnr3q5xnWVjEOm4mILFuVKDEJtnQ0U4ZlWc0Mh33UzBdN6ZhXe30Q&usqp=CAU');
+}
+.k{
+    background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9tD7EFXkvlDFznc-FiZSZLQpiAkwGitXcRg&usqp=CAU') ;
+}
+.l{
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAuzjLdm0G2LAisQSasZDWXW4rHDQ0RHIhPw&usqp=CAU');
+}
+.pressed{
+    opacity: 0.5;
+    box-shadow: -1px -1px 3px red;
+}
