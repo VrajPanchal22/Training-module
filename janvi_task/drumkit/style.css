@@ -1,0 +1,60 @@
+body{
+    max-width: 100vw;
+    height: 100vh;
+    background-color: rgba(153, 69, 69, 0.704);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.logo{
+    font-size:100px;
+    font-family: 'Rubik Spray Paint', cursive;
+    color: white;
+    text-shadow: 5px 0px 0px red;
+}
+
+.instruments{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 40vh;
+    width: 80vw;
+}
+.drumkit{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 30vh;
+    flex: 0.5;
+    margin: 20px;
+    border: 12px solid rgb(68, 73, 108);
+    border-radius: 10px;
+    color: transparent;
+    
+}
+#instruments1{
+    background-image: url("images/bass_drum.png");
+}
+#instruments2{
+    background-image: url("images/floortoms.jpg");
+}
+#instruments3{
+    background-image: url("images/tom_toms.jpg");
+}
+#instruments4{
+    background-image: url("images/Snaredrum.png");
+}
+#instruments5{
+    background-image: url("images/trumpet.jpeg");
+}
+#instruments6{
+    background-image: url("images/violin.jpeg");
+}
+.animation{
+    transform: scale(1.2);
+    border-color: aquamarine;
+}
