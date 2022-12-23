@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+background-color: antiquewhite;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+.w{
+    background-image: url(/drumkit-task/img/snare\ drum.jpeg);
+}
+.a{
+    background-image: url(/drumkit-task/img/snare\ drum.jpeg);
+}
+.s{
+    background-image: url(/drumkit-task/img/Tom.webp);
+}
+.d{
+    background-image: url(/drumkit-task/img/Tom.webp);
+}
+.j{
+    background-image: url(/drumkit-task/img/snare3.jpg);
+}
+.k{
+    background-image: url(/drumkit-task/img/disck.jpg);
+}
+.l{
+    background-image: url(/drumkit-task/img/bass\ drum.jpeg);
+}
+.button{
+    height: 20vh;
+    width: 20vh;
+    background-size: cover;
+    font-size: 5vw;
+    color: firebrick;
+    font-weight: bold;
+}
+.add{
+    box-shadow: 0 0 55px black;
+    transform: translateY(4px);
+}
