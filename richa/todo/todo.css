@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+body{
+    background-image: url(/todo/img/istockphoto-514914078-612x612.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.main{
+    background-color: chartreuse;
+    margin: 40vh auto;
+    max-width: 40vw;
+    box-shadow: 0 0 55px black;
+}
+img{
+    width: 2vh;
+}
+.taskinput-box{
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+}
+.taskinput-box input{
+    width: 35vh;
+}
+.filter-box{
+    display: flex;
+    justify-content: space-between;
+}
+.filters span.active{
+    color: rgb(186, 90, 235);
+    cursor: pointer;
+}
+.filters span{
+    cursor: pointer;
+}
+.editing{
+    cursor: pointer;
+}
+.checked{
+    text-decoration: line-through;
+}
