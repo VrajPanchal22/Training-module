@@ -1,0 +1,55 @@
+h1{
+    text-align: center;
+    margin: 100px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin:  auto;   
+    width: 95%;
+}
+
+
+    
+.drum{
+    display: flex;
+    border: 5px solid blue;
+    width: 200px;
+    height: 250px;
+    background-size: cover;
+    border-radius: 20px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 80px;
+}
+
+.w{
+    background-image: url(https://images.unsplash.com/photo-1626962131658-603aae425e19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRydW18ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
+}
+
+.s{
+    background-image: url(https://www.shutterstock.com/image-vector/realistic-red-drum-wooden-sticks-260nw-1936481851.jpg);
+}
+.a{
+    background-image: url(https://media.istockphoto.com/id/186875718/photo/silver-chrome-snare-drum-with-sticks-instrument-on-white-background.jpg?s=612x612&w=0&k=20&c=K9hq3AfrfM2yk7LNpxVjw7zBE5c4wUnnm8GbKIxe3ek=);
+}
+.d{
+    background-image: url(https://media.istockphoto.com/id/1148943461/vector/beautiful-wooden-percussion-musical-instrument-drum-with-chopsticks.jpg?s=612x612&w=0&k=20&c=zG7BnUTK87LIkFAl_L_8nitiN1AWxwz3GUamV94dcXw=);
+}
+.j{
+    background-image: url(https://cdn.pixabay.com/photo/2012/04/13/00/39/drums-31362__480.png);
+}
+.k{
+    background-image: url(https://images.unsplash.com/photo-1623771859039-e435068f39d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80);
+}
+.l{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5S7WG9cyLRt2nseuGVNboFmiRbpIoLyobg&usqp=CAU);
+}
+
+
+.animation{
+    opacity: 70%;
+    border-color: red;
+    color: red;
+}
