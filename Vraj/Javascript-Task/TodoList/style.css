@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#heading{
+    text-align: center;
+    margin: 20px 0;
+}
+.container{
+    margin-top: 50px;
+    height: 400px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    margin: 0 150px;
+    border-radius: 20px;
+    overflow: auto;
+    background-color: bisque;
+
+}
+.list{
+    list-style: none;
+    margin-top: 10px;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.3) ;
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+   display: flex;
+}
+.checked{
+    text-decoration: line-through;
+}
+
+#inputDiv{
+    margin-bottom: 20px;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 1.6rem;
+}
+
+.btn{
+    background-color: lightgreen;
+    font-weight: bold;
+    padding: 5px;
+    
+}
+
+.taskInput{
+    background-color: lightgreen;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#output-container{
+
+    width: 70%;
+}
+
+#outputDiv{ 
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+
+
+}
+
+.del-btn{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-left: 20px;;
+}
