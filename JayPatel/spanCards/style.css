@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.span-card {
+    display: flex;
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0 10vw;
+}
+
+.span-card__image {
+    display: flex;
+    flex: 1;
+    margin: 100px 10px;
+    transition: flex 2s;
+    border-radius: 50px;
+    background-color: red;
+}
+
+.span-card--span {
+    flex: 8;
+    background-color: grey;
+}
+
+#image1 {
+    background: url("images/image1.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+#image2 {
+    background: url("images/image2.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+#image3 {
+    background: url("images/image3.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+#image4 {
+    background: url("images/image4.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+#image5 {
+    background: url("images/image5.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+#image6 {
+    background: url("images/image6.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 700px) {
+    .span-card {
+        flex-direction: column;
+    }
+
+    .span-card__image {
+        margin: 10px 0px;
+    }
+}

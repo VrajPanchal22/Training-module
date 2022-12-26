@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/TodoFinal/TodoFinal.css">
+</head>
+<body>
+    <div class="container">
+        <input type="text" class="addTxt" placeholder="Task...">
+        <button class="addbtn" onclick="addElement()">
+            <img src="/Photos/plus-circle1.png" alt="plus-circle1">
+        </button>
+        <div class="list"></div>
+        
+    </div>
+    <div class="deleteall"><button class="delall" onclick="deleteall()">Delete All</button></div>
+    <!-- <div class="Menu"><select id="sort">
+        <option value="sort" selected>Sort by</option>
+        <option value="Incompleted">Incompleted</option>
+        <option value="completed">completed</option>
+        <option value="all">Incompleted</option>
+
+    </select></div> -->
+
+        <button class="completed" onclick="completed()">Completed</button>
+        <button class="incompleted " onclick="incompleted()">Incompleted</button>
+     <button class="ALL" onclick="showall()">ALL</button>
+     <div class="sort">
+        <input type="checkbox" class="box" checked="true" onclick="sorted()"> Sort
+     </div>
+    
+    <script src="/TodoFinal/TodoFinal.js"></script>
+</body>
+</html>
