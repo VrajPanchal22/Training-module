@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link href="style.css" rel="stylesheet">
+   </head>
+
+<body>
+    <h2 id="heading">Todo App</h2>
+    <div class="container">
+            <div id="inputDiv">
+                <form style="display:inline-block;" >
+                    <input class="taskInput" type="text" placeholder="Add Task here!!" id="todo" name="todo"
+                        required>
+                    <input  class="btn" type="submit" placeholder="Add">
+                </form>
+                    <button class="btn" onclick="handleDeleteAll()">Delete all</button>
+                    <button class="btn" onclick="filter()">Filter</button>
+                    <button class="btn" onclick="completed()">Completed Task</button>
+                    <button class="btn" onclick="Pending()">Pending Task</button>
+                    <button class="btn" onclick="allTask()">All Task</button>
+
+            </div>
+        <div id="output-container">
+            <ul class="output">
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</head>
+</body>
+
+</html>
