@@ -7,231 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
 
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        li {
-            background-color: grey;
-        }
-
-        label {
-            background-color: red;
-        }
-
-        .label--textdecorator {
-            text-decoration: line-through;
-        }
-    </style>
 </head>
 
 <body>
     <div id="todolist" class="todolist">
+        <h1>To Do List</h1>
 
-        <form id="todolist__newtask">
+        <form class="todolist__newtask">
             <input type="text" name="task" id="newtask">
-            <button type="submit">Add Task</button>
+            <button type="submit">+</button>
         </form>
 
         <ul id="tasks" class="todolist__tasks">
             <!-- tasks -->
         </ul>
 
-        <button onclick="deleteAll()">deleteAll</button>
-        <button onclick="sort()">sort</button>
 
         <br>
-        <br>
-        <button onclick="showCompletedTasks()">Completed Tasks</button>
-        <button onclick="showPendingTasks()">Pending Tasks</button>
-        <button onclick="showAllTasks()">All Tasks</button>
+        <div class="buttons buttons--width">
+            <button class="buttons__btn" onclick="deleteAll()">deleteAll</button>
+            <button id="sort" class="buttons__btn" onclick="sort()">sort</button>
+        </div>
+        <div id="buttons" class="buttons">
+            <button class="buttons__btn" onclick="showCompletedTasks()">Completed Tasks</button>
+            <button class="buttons__btn" onclick="showPendingTasks()">Pending Tasks</button>
+            <button class="buttons__btn buttons__btn--clicked" onclick="showAllTasks()">All Tasks</button>
+        </div>
     </div>
 
-    <script>
+    <script src="script.js"></script>
 
-        let tasklist = [];
-        let latestFirst = localStorage.getItem("latestFirst") ? JSON.parse(localStorage.getItem("latestFirst")) : false;
-
-        let viewCompletedTask = false;
-        let viewPendingTask = false;
-
-        if (!localStorage.getItem("todolist")) {
-            localStorage.setItem("todolist", "[]")
-        }
-
-        // ---------------------------------------------------
-        // Load all task
-        loadTask()
-        function loadTask() {
-
-            tasklist = JSON.parse(localStorage.getItem("todolist"))
-
-            // spread Operator
-            temptasklist = new Array(...tasklist);
-
-            console.log(tasklist);
-            console.log(temptasklist);
-
-            if(viewCompletedTask && !viewPendingTask) {
-                // filter method didnot change original object
-                temptasklist = tasklist.filter(ele => ele.completed)
-            }
-            else if(!viewCompletedTask && viewPendingTask) {
-                temptasklist = tasklist.filter(ele => !ele.completed)
-            }
-
-            // console.log(temptasklist);
-
-            // add items in DOM
-            ul = document.getElementById("tasks");
-            ul.innerHTML = '';
-
-            temptasklist.map((obj, index) => {
-                // console.log(obj);
-                ul.innerHTML += `<li class="todolist__task">
-                    <input type="checkbox" id=${"" + obj.index} name=${"task" + obj.index} ${obj.completed ? "checked" : ""}>
-                    <label for=${"" + obj.index} class=${obj.completed ? "label--textdecorator" : ""} >${obj.task}</label>
-                    <button onclick="deleteTask(${obj.index})" >delete</button>
-                    </li>`
-            })
-
-        }
-
-
-        // ---------------------------------------------------
-        document.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            newTaskObj = {
-                index: tasklist.length,
-                task: document.getElementById("newtask").value,
-                completed: false
-            }
-
-            if(latestFirst) {
-                tasklist.unshift(newTaskObj)
-            }
-            else {
-                tasklist.push(newTaskObj)
-            }
-            // console.log(newTaskObj);
-            localStorage.setItem("todolist", JSON.stringify(tasklist));
-
-            loadTask();
-
-            // console.log(document.getElementById("newtask").value);
-        })
-
-        // ---------------------------------------------------------
-
-        // event listener on all task
-        document.getElementById("tasks").addEventListener("click", event => {
-            if (event.target.id != "tasks") {
-                completed = event.target.checked
-
-                if (completed != undefined) {
-                    console.log(event.target.id);
-                    index = 0;
-
-                    // can't break
-                    // tasklist.forEach((ele, i) => {
-                    //     if(ele.index == event.target.id) {
-                    //         index = i;
-                    //     }
-                    // })
-
-                    for(i = 0; i < tasklist.length ; i++) {
-                        if(tasklist[i].index == event.target.id) {
-                            index = i;
-                            break;
-                        }
-                    }
-                    console.log(index);
-                    // update status of the task
-                    tasklist[index].completed = completed;
-                    localStorage.setItem("todolist", JSON.stringify(tasklist));
-
-                    loadTask ()
-                }
-            }
-
-        })
-
-
-
-        // -------------------------------------------------------
-        // delete task
-
-        function deleteTask(index) {
-            console.log("delete = ", index);
-
-            tasklist = tasklist.filter(ele => ele.index != index)
-            // tasklist.splice(index, 1)
-            localStorage.setItem("todolist", JSON.stringify(tasklist))
-            loadTask()
-        }
-
-
-
-        // ----------------------------------------------------------
-        // deleteAll
-
-        function deleteAll() {
-            localStorage.clear();
-
-            //again initialize because of .getItem() method doesn't throw error
-            localStorage.setItem("latestFirst", JSON.stringify(latestFirst))
-            localStorage.setItem("todolist", "[]")
-
-            loadTask()
-        }
-
-
-        // ----------------------------------------------------------
-        // sort 
-
-        function sort() {
-            tasklist.sort((a, b) => {
-                if(latestFirst)
-                    return a.index - b.index;
-                else 
-                    return b.index - a.index;
-            })
-
-            // console.log("sorted = ", tasklist);
-            localStorage.setItem("todolist", JSON.stringify(tasklist.reverse()))
-
-            latestFirst = !latestFirst
-            localStorage.setItem("latestFirst", JSON.stringify(latestFirst))
-            loadTask()
-        }
-
-        // ----------------------------------------------------------
-        // showCompletedTasks 
-
-        function showCompletedTasks() {
-            viewCompletedTask = true;
-            viewPendingTask = false;
-            loadTask()
-        }
-        
-        // ----------------------------------------------------------
-        // showPendingTasks 
-        
-        function showPendingTasks() {
-            viewCompletedTask = false;
-            viewPendingTask = true;
-            loadTask()
-        }
-        
-        // ----------------------------------------------------------
-        // showAllTasks
-        
-        function showAllTasks() {
-            viewCompletedTask = false;
-            viewPendingTask = false;
-            loadTask()
-        }
-
-    </script>
 </body>
 
 </html>
