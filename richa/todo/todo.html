@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="main">
+        <div class="taskinput-box">
+            <input type="text" placeholder="Write your To Do's">
+        </div>
+        <div class="filter-box">
+            <div class="filters">
+                <span class="symbol">ToDo's>>></span>
+                <span id="alltask" class="active">All</span>
+                <span id="pendingtask">Pending</span>
+                <span id="completed">Completed</span>
+                <!-- <button onclick="showtodo()">submit</button> -->
+            </div>
+            <button class="clearall-btn">Clear All</button>
+        </div>
+        <ul class="todolist-box">
+            <li class="todolist">
+                <label for="1">
+                    <input type="checkbox" name="" id="1">
+                    <p>hello</p>
+                </label>
+                <div class="editing">
+                    <img src="/todo/img/list.png" alt="" srcset="">
+                    <ul class="menu">
+                        <li>Edit</li>
+                        <li>Delete</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>

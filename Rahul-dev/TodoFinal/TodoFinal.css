@@ -1,0 +1,210 @@
+body{
+    background-image: url(/Photos/pexels-kaique-rocha-775201.jpg);
+    /* background-image: url(/Photos/todo.jpg); */
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height: 100%;
+
+   
+}
+.container{
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    height: 25pc;
+    width:20pc;
+    margin: auto;
+    box-shadow: 0 0 55px black;
+    backdrop-filter: blur(5px);
+}
+.addTxt{
+    position:absolute;
+    height: 5px;
+    width: 60%;
+    margin: auto;
+    top:25px;
+    right:0;
+    left: 0;
+    outline: none;
+    border:none;
+    padding:20px;
+    padding-right:50px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.addbtn{
+    position: absolute;
+    height: 40px;
+    width:40px;
+    margin: auto;
+    top:15px;
+    right:35px;
+    cursor:pointer;
+    border: 0;
+    outline: none;
+    background:transparent;
+}
+.addbtn img{
+    position: absolute;
+    height: 40px;
+    margin: auto;
+    top:25px;
+    bottom: 0;
+    left:0;
+    right: 0;
+}
+.list{
+    position:absolute;
+    height: 75%;
+    width: 100%;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+.list::-webkit-scrollbar{
+    -webkit-appearance: none;
+    appearance: none;
+}
+.element{
+    position: relative;
+    height: fit-content;
+    width:55%;
+    right:0;
+    text-align: left;
+    transition:0.2s;
+    padding:10px;
+    background: #fff;
+    cursor:pointer;
+    border-radius: 2px;
+    padding-right:80px;
+    word-wrap:break-word;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+
+}
+
+.element:hover{
+    transform: scale(1.1);
+}
+.tick{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    height: 20px;
+    bottom: 0;
+    right:50px;
+}
+.dustbin{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    height: 30px;
+    bottom: 0;
+    right:10px;
+    filter: grayscale(1);
+
+    
+}
+.deleteall{
+    display: inline-block;
+    position: absolute;
+    bottom:22vh;
+    left:42%;
+    cursor: pointer;
+}
+.delall{
+    background:rgb(255, 0, 89);
+    color:white;
+    height:30px;
+    width:100px;
+    border:none;
+    border-radius: 5px;
+    font-weight: bold;  
+}
+.Menu{
+    display: inline-block;
+    position: absolute;
+    bottom:18vh;
+    right:40%;
+}
+#sort{
+    background:rgb(255, 0, 89);
+    color:white;
+    height: 30px;
+    width:100px;
+    border:none;
+    border-radius:5px;
+}
+option
+{
+    background:rgb(255, 0, 89);
+    color:white;
+    height: 30px;
+    width:100px;
+    border:none;
+    border-radius:5px;
+}
+.incompleted{
+    cursor: pointer;
+    position:absolute;
+    left:42%;
+    bottom: 16vh;
+    background:rgb(255, 0, 89);
+    color:white;
+    height:30px;
+    width:100px;
+    border:none;
+    border-radius: 5px;
+    font-weight: bold;
+
+
+}
+.completed{
+    cursor: pointer;
+    position:absolute;
+    right:42%;
+    bottom: 22vh;
+    background:rgb(255, 0, 89);
+    color:white;
+    height:30px;
+    width:100px;
+    border:none;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+.ALL{
+    cursor: pointer;
+    position:absolute;
+    right:42%;
+    bottom: 16vh;
+    background:rgb(255, 0, 89);
+    color:white;
+    height:30px;
+    width:100px;
+    border:none;
+    border-radius: 5px;
+    font-weight: bold;
+
+
+}
+.sort{
+    position: absolute;
+    color:rgb(255, 0, 89);
+    bottom:10vh;
+    right:48%;
+    height: fit-content;
+    width: fit-content;
+    
+}
+.box{
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+.box:hover{
+    transform: scale(1.2);
+}
