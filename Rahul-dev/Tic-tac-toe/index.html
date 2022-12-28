@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIC-TAC-TOO</title>
+    <link rel="stylesheet" href="/Tic-tac-toe/tic-tac-too.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="Symbol" >
+      Player1 Symbol
+      <input type="text" id="symbol1" readonly> 
+      Player2 Symbol
+      <input type="text"  id="symbol2" readonly>
+
+    </div>
+    <div class="container">
+      <div class="tic-tac-too">
+       
+        <div class="cell">
+            <input type="text" name="cell" id="b1" class="textbox" onclick="myfunction() ; turn('b1')">
+            
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b2" class="textbox" onclick="myfunction(); turn('b2')">
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b3" class="textbox"  onclick="myfunction() ;turn('b3')" >
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b4" class="textbox" onclick="myfunction(); turn('b4')">
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b5" class="textbox" onclick="myfunction(); turn('b5')">
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b6" class="textbox" onclick="myfunction(); turn('b6')">
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b7" class="textbox" onclick="myfunction(); turn('b7')">
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b8" class="textbox" onclick="myfunction() ;turn('b8')">
+        </div>
+        <div class="cell">
+            <input type="text" name="cell" id="b9" class="textbox" onclick="myfunction(); turn('b9')">
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-danger btn-lg" style="margin-left: 50%;  margin-top: 10px;" onclick="reset()">Reset</button>
+    <br>
+    <span id="Turn" onclick="turn()">Player 1's turn</span>
+    <script src="/Tic-tac-toe/tic-tac-too.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+  </body>
+</html>
