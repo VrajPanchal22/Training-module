@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="tic-tak.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe<span class="badge bg-secondary">Game</span></h1>
+
+        <h2>Lets Begin the Game !</h2>
+        <div class="accordion " id="accordionPanelsStayOpenExample">
+            <div class="accordion-item ">
+                <h2 class="accordion-header " id="panelsStayOpen-headingOne">
+                    <button class="accordion-button  secondary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        How to play?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne ">
+                    <div class="accordion-body">
+                        <strong>welcome to tic-tak-toe game</strong> Basically 2 players are allowed to play this game.player 1 has X ans player 2 has O,both player play accordingly
+                        like one on one,player wins accoring to the match of your value either horizontal or vertical or diagonally . if any player wins then the game ends and need to restart new one.
+                        <strong>So hurry up and best of luck !</strong>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<div class="gameBlock">
+        <!---3*3 matrix for input of x or o-->
+        <input type="text" id="B1" onclick="func_1();mainfunc()" readonly>
+        <input type="text" id="B2" onclick="func_2();mainfunc()" readonly>
+        <input type="text" id="B3" onclick="func_3();mainfunc()" readonly>
+        <br>
+        <input type="text" id="B4" onclick="func_4();mainfunc()" readonly>
+        <input type="text" id="B5" onclick="func_5();mainfunc()" readonly>
+        <input type="text" id="B6" onclick="func_6();mainfunc()" readonly>
+        <br>
+        <input type="text" id="B7" onclick="func_7();mainfunc()" readonly>
+        <input type="text" id="B8" onclick="func_8();mainfunc()" readonly>
+        <input type="text" id="B9" onclick="func_9();mainfunc()" readonly>
+
+        <br><br>
+        <button type="button" class="restart" onclick="restart()">Restart Game</button>
+        <p id="print"></p>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+<script src="tic-tak.js"></script>
+</body>
+
+</html>
