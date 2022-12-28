@@ -1,5 +1,5 @@
 let formData = document.querySelector('form');
-let ls = localStorage.getItem('todo');
+let ls = localStorage.getItem('todos');
 let todo = ls ? JSON.parse(ls) : [];
 let idCount = 0;
 
@@ -8,13 +8,13 @@ function getNewId() {
     }
 
 function getTodo () {
-    let todoString = localStorage.getItem('todo');
+    let todoString = localStorage.getItem('todos');
     return JSON.parse(todoString);
     }
 
 function setTodo (todoList) {
     let tododata = JSON.stringify(todoList);
-    localStorage.setItem('todo', tododata);
+    localStorage.setItem('todos', tododata);
     }
 
 function renderTodos(todoList) {
@@ -23,8 +23,9 @@ function renderTodos(todoList) {
     document.querySelector("ul").innerHTML += 
     `
     <div value="${index}" class="list-group-item" id='outputDiv'>  
-        <div>
-            <span class="${data.completed? "checked" : ""}">${index}.  ${data.name} </span>
+        <div>   
+            <span> ${index}. </span>
+            <span class="${data.completed? "checked" : ""}">  ${data.name} </span>
             <input class="form-check-input" type="checkbox" id="check-${index}" data-id="${index}"  onclick="handleCheckbox(this)" ${data.completed? "checked" :""}>
         </div>
         <button class="del-btn" onclick="handleDelete(${index})" >Delete</button>
@@ -36,15 +37,14 @@ function renderTodos(todoList) {
 formData.addEventListener('submit', (e) => {
     e.preventDefault();
     let inputData = formData[0].value;
-    let todoList = getTodo();
-    // timestamp
-    const todoObj ={
+    let todoList = getTodo()
+    let todos ={
         id: getNewId(),
         name: inputData,
         completed: false,
         timeStamp: "" + new Date().getTime()
     }
-    todoList.push(todoObj);
+    todoList.push(todos);
     setTodo(todoList);
     renderTodos(todoList);
 })
@@ -66,7 +66,7 @@ function handleDeleteAll() {
 function filter(todoList){
     todoList = getTodo()
     filterList = [...todoList].sort((a,b) => b.timeStamp - a.timeStamp)
-    console.log(filterList)
+    console.log(filterList) 
     setTodo(filterList);
     renderTodos(filterList);
 }
@@ -79,16 +79,37 @@ function completed(todoList){
             completedTask.push(element)
         } 
     })
-    console.log(completedTask)
+    console.log('Completed Task',completedTask)
     setTodo(todoList)
     renderTodos(completedTask)
+}
+
+function Pending(todoList){
+    todoList = getTodo()
+    let pendingTask = [];
+    todoList.forEach( (element)=> {
+        if (element.completed === false) {
+            pendingTask.push(element)
+        } 
+    })
+    console.log('Pending Task',pendingTask)
+    setTodo(todoList)
+    renderTodos(pendingTask)
+}
+
+function allTask(){
+    todoList = getTodo()
+    console.log('All Task',todoList)
+    setTodo(todoList)
+    renderTodos(todoList)
+
 }
 
 function handleCheckbox(element) {
     let itemPos = element.getAttribute("data-id")
     let isChecked = element.checked;
-    console.log('isChecked: ', isChecked);
-    console.log('itemPos: ', itemPos);
+    // console.log('isChecked: ', isChecked);
+    // console.log('itemPos: ', itemPos);
     let todoList = getTodo();
     let newTodoList = todoList.map((elem, index) => {
         if(index === parseInt(itemPos)){
@@ -108,4 +129,4 @@ function handleCheckbox(element) {
 }
 
 renderTodos(todo);
-        
+
