@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">Pokemon</h1>
+
+        <div class="loaders" id="loaders">
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+        </div>
+        
+
+        <div class="pokemons" id="pokemons">
+            <!-- pokemons -->
+        </div>
+
+        <div class="buttons" id="buttons">
+            <button id="prev" class="button button--invisible" onclick="prevClicked()" > &lt prev </button>
+            <button id="next" class="button" onclick="nextClicked()" > next &gt </button>
+        </div>
+
+        <div class="pages" id="pages" >
+            <!-- page no -->
+        </div>
+    </div>
+</body>
+
+</html>
