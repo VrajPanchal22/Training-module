@@ -1,0 +1,41 @@
+body{
+    text-align: center;
+}
+
+#B1,#B2,#B3,#B4,#B5,#B6,#B7,#B8,#B9{
+width: 8rem;
+        height: 7rem;
+        margin: auto;
+        border: 1px solid gray;
+        border-radius: 6px;
+        font-size: 30px;
+        text-align: center;
+}
+
+
+.container{
+    text-align: center;
+
+}
+.restart{
+    background-color: grey;
+    border:1px solid white;
+    border-radius: 20px;
+    font-size: 1rem;
+    height: 4rem;
+    width:10rem;
+}
+#print{
+    font-size: 3rem;
+    width: auto;
+    height: auto;
+    background-color: grey;
+    color:white;
+    margin-top: 20px;
+}
+input:hover{
+    background-color: grey;
+}
+.gameBlock{
+    margin-top: 4rem;
+}

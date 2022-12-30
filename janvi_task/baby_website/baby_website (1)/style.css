@@ -1,0 +1,369 @@
+body {
+    margin: 0px;
+    overflow-x: hidden;
+    display: block;
+    min-width: 100%;
+    font-size: 1rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    background-color: rgb(110, 182, 158);
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    height: 3rem;
+    text-align: center;
+}
+
+.container {
+     position: relative; 
+    flex-direction: column;
+    width: 100%;
+    background-image: url("images/TopContainer.png");
+    background-size: cover;
+    background-position: center center;
+}
+
+.navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+.navbarOptions{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+.logo {
+    float: left;
+    font-size: 3rem;
+    color: #b53860;
+    font-weight: 900;
+    margin-left: 12rem;
+}
+
+b {
+    color: #6e645c;
+}
+
+li {
+    list-style-type: none;
+    margin: 0rem 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.content1 {
+    font-size: 5rem;
+    color: #b53860;
+    margin-top: 3rem;
+    margin-left: 12rem;
+}
+
+.content2 {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin-top: 3rem;
+    margin-left: 12rem;
+}
+
+button {
+    width: 12rem;
+    height: 3rem;
+    background-color: #b53860;
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    margin: 2rem 0rem;
+    font-size: 1.1rem;
+    margin-left: 12rem;
+}
+
+.secondContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.content2_1 {
+    font-weight: 200;
+    font-size: 2.3rem;
+    margin-top: 5rem;
+}
+
+.content2_2 {
+    color: #b53860;
+    font-size: 2.7rem;
+    margin-top: 1.1rem;
+}
+
+.imgmain {
+    background-image: url("images/secondimagefirstimage.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10rem;
+    width: 10rem;
+    background-color: #f8f8f8;
+    border: 1px dashed black;
+    box-shadow: 1px 2px 5px rgb(5 6 7 / 15%);
+    border-radius: 50%;
+}
+
+.imagepart {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70rem;
+}
+
+.img{
+    height: 16.5rem;
+    width: 10.5rem;
+    flex-direction: column;
+}
+
+.imgcontent {
+    margin: 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.thirdcontainer {
+    margin: 3rem 0rem;
+    right: 7rem;
+    /* position: relative; */
+}
+
+
+.content3_1 {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-left: 12rem;
+}
+
+.content3_2 {
+    margin-left: 12rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.thirdContainerContent {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fourthContainerContent {
+    flex-direction: column;
+    right: 12rem;
+    /* position: relative; */
+}
+
+.imgContainer2 {
+    margin-left: 5rem;
+}
+
+.fifthContainer {
+    height: 58rem;
+    width: 100vw;
+    margin-top: 15rem;
+}
+
+.reviewsContainer {
+    height: 56rem;
+    width: 94vw;
+    background-color: #f2e5df;
+}
+
+.footerContainer {
+    height: 25rem;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    flex-direction: row;
+}
+
+.footer {
+    flex-direction: column;
+    color: white;
+}
+
+.CarouselImgDiv {
+    height: 30rem;
+    width: 22rem;
+    background-color: white;
+    margin: 0rem 1rem;
+}
+
+.imgSection {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.CarouselImg {
+    height: 20rem;
+    width: 20rem;
+}
+
+.CarouselImgDiv{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading {
+    flex-direction: column;
+    align-items: center;
+}
+
+.signStar {
+    justify-content: space-around;
+}
+.arrow{
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid black;
+    border-left: none;
+    border-bottom: none;
+ }
+ .arrowLeft{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     transform: rotateZ(-135deg)
+ }
+ .arrowRight{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     transform: rotateZ(45deg)
+ }
+.contactContain {
+    flex-direction: column;
+    align-items: center;
+}
+
+.video {
+    position: relative;
+    z-index:1;
+    top:20rem;
+    left:17rem;
+    width: 55rem;
+    height: 30rem;
+}
+.contact{
+    margin-top: 15rem;
+    text-align: center;
+    flex-direction: column;
+    font-size: 1.4rem;
+    align-items: center;
+}
+.backgroundContainer{
+    background-image: url("images/videopage-bg.png");
+    width: 95%;
+    height: 40rem;
+}
+.container7heading {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-left: 25rem;
+    margin-right: 25rem;
+}
+.container7Content {
+    font-weight: 500;
+    margin-left: 25rem;
+    margin-right: 25rem;
+}
+.secondLastContainer{
+    height: 8rem;
+    box-shadow: 0 -5px 5px -5px #333;
+    justify-content: space-between;
+}
+.serviceImg{
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 1.2rem;
+}
+.serviceSection{
+    height: 4rem;
+    width: 15rem;
+    
+}
+.footerParts{
+    flex-direction: column;
+    margin-top: 2rem;
+   margin:0rem 4rem;
+}
+.footerSections{
+    flex-direction: row;
+}
+.dots{
+    display: inline-block;
+    height:0.7rem;
+    width: 0.7rem;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(200, 196, 196);
+    margin-left: 0.5rem;
+    margin-top: 2rem;
+}
+.dots:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.active{
+    background-color: #b53860;
+}
+
+@media screen and (max-width: 1150px)  {
+   .video{
+    position: static;
+   }
+    .backgroundContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imgmain{
+        width: 6rem;
+        height: 6rem;
+    }
+    li{
+        margin: 0rem 0.5rem;
+    }
+    a{
+        font-size: 1rem;
+    }
+    .navbar{
+        justify-content: unset;
+    }
+}
+@media screen and (max-width: 900px) {
+    .navbar{
+        flex-direction: column;
+        height: 8rem;
+    }
+    .navbarOptions{
+        height: 0rem;
+    }
+    .tohide1{
+        display: none;
+    }
+    .footerSections{
+        flex-direction: column;
+    }
+}
