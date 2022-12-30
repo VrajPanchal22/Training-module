@@ -1,10 +1,15 @@
 const id = document.location.search.slice(4);
 console.log("id = ", id);
 
-const pokemonObj = JSON.parse(sessionStorage.getItem("pokemons"))[id];
+const pokemonObj = JSON.parse(sessionStorage.getItem("pokemons"))[id]
 console.log("data = ", pokemonObj);
 
 console.log("data = ", document.getElementById("pokemon"));
+
+
+
+
+
 
 document.getElementById("pokemon").innerHTML = `
     <h1 class="heading">${pokemonObj.name}</h1>

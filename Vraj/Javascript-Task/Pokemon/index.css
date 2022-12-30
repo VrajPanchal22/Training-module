@@ -1,0 +1,130 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color:beige;
+}
+.heading{
+  text-align: center;
+  font-size: 4rem;
+  margin: 4rem;
+}
+.pokemons {
+    display: grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    grid-template-columns: auto auto auto auto;
+    /* border: 1px solid red; */
+    text-align: center;
+    margin: 10rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    
+  }
+  a{
+    text-decoration: none;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .pokemon__image{
+    object-fit: contain;
+    object-position:center;
+    max-height: 270px;
+    max-width: 270px;
+    margin: auto;
+    background-color: grey;
+    display: flex;
+  }
+  .pokemon__id{
+    text-align:  left;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: gray;
+    padding-left: 50px;
+  }
+  .pokemon__name{
+    text-align: left;
+    padding-left: 50px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+    font-weight: bolder;
+  }
+
+.link-container{
+  display: flex;
+  /* border: 1px solid red; */
+  background-color: wheat;
+  justify-content: center;
+  font-size: 1.4rem;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.link{
+  padding: 1rem;
+  margin: 0 2rem;
+  background-color: wheat;
+  cursor: pointer;
+  /* border: 1px solid red; */
+}
+
+.btn-container{
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: center;
+  margin: 4rem 0;
+}
+
+.btn-container button{
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  margin: 0 2rem;
+}
+
+/* ---------------------------------- */
+
+.wrapper{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+
+}
+.wrapper ul{
+	display: flex;
+	background-color:burlywood; 
+	padding: 8px;
+}
+.wrapper ul li{
+	list-style-type: none;
+	line-height: 55px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	/* background-color: #000; */
+	margin: 10px;
+	border-radius: 50px;
+	/* color: #fff; */
+	padding: 10px;
+}
+.wrapper ul li.numb{
+	height: 75px;
+	width: 60px;
+}
+.wrapper ul li.btn{
+	line-height: 60px;
+	font-size: 22px;
+}
+.wrapper ul li.active{
+	/* background-color: #fff; */
+	color: #000;
+	box-shadow: 0 0 20px;
+}
