@@ -2,7 +2,6 @@ let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20"
 // const imgUrl = "http://192.168.29.118:3004/images/pokemon/other/home/" //3.png" 
 
 pageNum=1
-pgObj=[]
 async function main() {
     try {
         const callEnd = await getPokemons()
@@ -47,7 +46,6 @@ async function getPokemon(url) {
 function loadPokemon(pokemon) {
     let id = pokemon.id
     imgSrc = `http://192.168.29.118:3004/images/pokemon/other/home/${id}.png`
-    sessionStorage.setItem("PageNumber", JSON.stringify(pgObj))
     sessionStorage.setItem("" + id, JSON.stringify(pokemon))
     document.getElementById("pokemons").innerHTML += 
     `
@@ -62,7 +60,7 @@ function loadPokemon(pokemon) {
 
 let ul = document.querySelector('ul');
 let allPages = 1154;
-paging(allPages, 1);
+paging(allPages, sessionStorage.getItem("PageNum") ? JSON.parse(sessionStorage.getItem("PageNum")) : 1);
 function paging(allPages, page){
     sessionStorage.clear()
     let li = '';
@@ -71,13 +69,12 @@ function paging(allPages, page){
     let liActive;
     console.log("Page:",page)
     pageNum = page;
-    pgObj.push(pageNum)
-    console.log(pgObj)
     document.getElementById("pokemons").innerHTML = ''
     main()
 
     if(page > 1){
         li += `<li class="btn" onclick="paging(allPages, ${page-1})"> < </i></li>`;
+        sessionStorage.setItem("PageNum", "" + page)
     }
     for (let pageLength = beforePages; pageLength <= afterPages; pageLength++){
         if(pageLength > allPages){
@@ -96,6 +93,7 @@ function paging(allPages, page){
     }
     if(page < allPages){
         li += `<li class="btn" onclick="paging(allPages, ${page+1})" > > </i></li>`;
+        sessionStorage.setItem("PageNum", "" + page)
     }
     ul.innerHTML = li;
 }

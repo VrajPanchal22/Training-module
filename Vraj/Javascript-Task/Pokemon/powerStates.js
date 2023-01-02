@@ -1,7 +1,6 @@
 id = window.location.search
-// console.log(id)
-
-newid = id.slice(4,6)
+console.log(id)
+newid = id.slice(4,7)
 console.log(newid)
 
 const pokemone = JSON.parse(sessionStorage.getItem("" + newid))
