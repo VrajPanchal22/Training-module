@@ -14,17 +14,17 @@ let pokiobj;
 let limit = 20;
 let play = 0;
 
-if(sessionStorage.getItem("play")) {
+if (sessionStorage.getItem("play")) {
   play = JSON.parse(sessionStorage.getItem("play"));
+} else {
+  play = 0;
 }
-else {
-  play = 0
-}
+console.log("plauy == ", play);
 
 // card.innerHTML = ``;
 // let url = ;
 function getname() {
-  loadingStart()
+  loadingStart();
   fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${play}&limit=20`)
     .then((response) => response.json())
     .then((json) => {
@@ -44,14 +44,14 @@ function getname() {
         temp.forEach((element) => {
           //console.log(element)
           mapping(element);
-          loadingEnd()
+          loadingEnd();
         });
         sessionStorage.setItem("user", JSON.stringify(pokemonimg));
       });
     });
-  sessionStorage.clear();
+  // sessionStorage.clear();
 }
-getname();
+// getname();
 
 function getimg(url) {
   return fetch(url)
@@ -130,32 +130,34 @@ function element(totalpages, page) {
   let activeLi;
   let beforePages = page - 1;
   let afterPages = page + 1;
-  taskbox.innerHTML="";
-  play = limit * (page-1);
+  taskbox.innerHTML = "";
+  play = limit * (page - 1);
   getname();
 
   if (page > 1) {
     liTag += `<li class="btn prev" onclick="element(totalpages,${
       page - 1
     })"><span><i class="fa fa-arrow-left" aria-hidden="true"></i>Prev</span></li>`;
+    // sessionStorage.setItem("play", play);
   }
 
   if (page > 2) {
     liTag += `<li class="numb " onclick="element(totalpages,1)"><span>1</span></li>`;
+    // sessionStorage.setItem("play", play);
     if (page > 3) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
   }
 
-  if(page == totalpages){
-    beforePages = beforePages -2;
-  }else if(page == totalpages - 1){
+  if (page == totalpages) {
+    beforePages = beforePages - 2;
+  } else if (page == totalpages - 1) {
     beforePages = beforePages - 1;
   }
 
-  if(page == 1){
+  if (page == 1) {
     afterPages = afterPages + 2;
-  }else if(page == 2){
+  } else if (page == 2) {
     afterPages = afterPages + 1;
   }
 
@@ -172,6 +174,7 @@ function element(totalpages, page) {
       activeLi = "";
     }
     liTag += `<li class="numb ${activeLi}" onclick="element(totalpages,${pageLength})">${pageLength}<span></span></li>`;
+    // sessionStorage.setItem("play", play);
   }
 
   if (page < totalpages - 1) {
@@ -179,6 +182,7 @@ function element(totalpages, page) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
     liTag += `<li class="numb " onclick="element(totalpages,${totalpages})"><span>${totalpages}</span></li>`;
+    // sessionStorage.setItem("play", play);
   }
 
   if (page < totalpages) {
@@ -186,20 +190,19 @@ function element(totalpages, page) {
       page + 1
     })"><span>Next<i class="fa fa-arrow-right" aria-hidden="true"></i></span></li>`;
   }
+  sessionStorage.setItem("play", play);
   ulTag.innerHTML = liTag;
 
-//let loaderBtn = document.getElementsByClassName('numb');
-
+  //let loaderBtn = document.getElementsByClassName('numb');
 }
-element(totalpages, 1);
+element(totalpages, (play/limit) + 1);
 
 function loadingStart() {
-  document.querySelector(".whole").style.display = 'none'
-  document.querySelector(".loader").style.display = 'flex'
+  document.querySelector(".whole").style.display = "none";
+  document.querySelector(".loader").style.display = "flex";
 }
 
 function loadingEnd() {
-  document.querySelector(".whole").style.display = 'grid'
-  document.querySelector(".loader").style.display = 'none'
+  document.querySelector(".whole").style.display = "grid";
+  document.querySelector(".loader").style.display = "none";
 }
-
