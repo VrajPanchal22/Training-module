@@ -1,0 +1,29 @@
+body{
+  background-color:beige;
+
+}
+.heading{
+    text-align: center;
+}
+
+#container{
+    display: flex;
+}
+.img{
+    flex: 1;
+    padding: 4rem;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.img img{
+    align-items: center;
+    background-color: gray;
+}
+
+.content{
+    flex: 1;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: bolder;
+}

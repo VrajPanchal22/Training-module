@@ -1,0 +1,31 @@
+body{
+    color: rgb(250, 165, 53);
+}
+p{
+    font-weight: bold;
+    font-size: 2rem;
+}
+h1{
+    font-size: 3rem;
+}
+
+.container{
+    background: aliceblue;
+    height: 90vh;
+
+    box-sizing: border-box;
+    text-align: center;
+}
+#box1, #box2, #box3,
+#box4 ,#box5, #box6,
+#box7 ,#box8, #box9{
+    height: 4rem;
+    width: 4rem;
+    font-size: 1rem;
+    text-align: center;
+}
+#reset{
+    height: 3rem;
+    width: 8rem;
+    background-color: cadetblue;
+}

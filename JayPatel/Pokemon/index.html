@@ -15,13 +15,26 @@
     <div class="container">
         <h1 class="heading">Pokemon</h1>
 
+        <div class="loaders" id="loaders">
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+        </div>
+        
+
         <div class="pokemons" id="pokemons">
             <!-- pokemons -->
         </div>
 
         <div class="buttons" id="buttons">
-            <button class="button button--invisible"> &lt prev </button>
-            <button class="button"> next &gt </button>
+            <button id="prev" class="button button--invisible" onclick="prevClicked()" > &lt prev </button>
+            <button id="next" class="button" onclick="nextClicked()" > next &gt </button>
+        </div>
+
+        <div class="pages" id="pages" >
+            <!-- page no -->
         </div>
     </div>
 </body>
