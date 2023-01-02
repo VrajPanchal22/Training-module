@@ -2,18 +2,19 @@ var  preloader = document.getElementById('preLoader');
 preloader.addEventListener('load',()=>{
     preloader.style.display="none";
 })
+
 var limit = 20;
 let getoffset = sessionStorage.getItem('offset') ;
 offset = getoffset == null ? 0 : parseInt(JSON.parse(getoffset)) ;
-var idCount = 0;
-function generateUrl(offset) {
-    var url = `https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${offset}`;
-    setAndPrintData(url);
-};
-
 
 pageId(offset);
 generateUrl(offset);
+
+function generateUrl(offset) {
+    var url = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`;
+    setAndPrintData(url);
+};
+
 // set data into data base and call printCards function to print them
 async function setAndPrintData(url) {
     console.log(url);
@@ -77,7 +78,6 @@ function getImgUrl(subData) {
 //print cards on ui
 function printCardes() {
     var pokemonList = getData();
-    console.log(pokemonList);
     cardContainer = document.getElementById('cardsContainer');
     cardContainer.innerHTML = '';
     pokemonList.forEach((item, index) => {
@@ -93,6 +93,7 @@ function printCardes() {
     })
 
 }
+disabled(offset);
 // for next and previous button
 let btn = document.querySelectorAll('.page-link');
 btn.forEach(element => {
@@ -100,18 +101,16 @@ btn.forEach(element => {
         if (element.id == 'next-btn') {
             offset= offset;
             offset += limit;
-            console.log(offset);
             pageId(offset);
         }
         if (element.id == 'prev-btn') {
             offset -= limit;
             pageId(offset);
+            
         }
         if(element.id==1 || element.id==2 || element.id==3){
             pagenumber=parseInt(element.innerText) ;
-            console.log(pagenumber);
             offset = (pagenumber * limit) - limit ; 
-            console.log(offset)
         }
         sessionStorage.setItem('offset' , offset);
         generateUrl(offset);
@@ -119,10 +118,24 @@ btn.forEach(element => {
 })
 //count and display page number for pagination
 function pageId(offset){
-    id1 = document.getElementById('1');
-    id1.innerHTML = (offset / limit) + 1;
-    id2 = document.getElementById('2');
-    id2.innerHTML = (offset / limit) + 2;
-    id3 = document.getElementById('3');
-    id3.innerHTML = (offset / limit) + 3;
+        id1 = document.getElementById('1');
+        id1.innerHTML = (offset / limit) + 1;
+        id2 = document.getElementById('2');
+        id2.innerHTML = (offset / limit) + 2;
+        id3 = document.getElementById('3');
+        id3.innerHTML = (offset / limit) + 3;
+        disabled(offset);
+       
 }
+
+// hide previous button when we are on first page
+function disabled(offset){
+    let previousBtn = document.getElementById('prev-btn');
+    if(offset== 0){
+        previousBtn.style.visibility="hidden";
+    }else{
+        previousBtn.style.visibility="visible";
+    }
+}
+   
+
