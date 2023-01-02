@@ -8,18 +8,17 @@ body {
 }
 
 .container {
-    display: flex;
+    /* display: flex;
     flex: 1;
     flex-direction: column;
-    align-items: center;
-    background-color: #f1f1f1;
+    align-items: center; */
+    /* background-color: #f1f1f1; */
     /* height: 100vh; */
 }
 
 .heading {
     margin: 30px;
 }
-
 
 
 /* ----------------------loader---------------------- */
@@ -33,7 +32,6 @@ body {
     margin-bottom: 5vh;
     border-radius: 20px;
     height: 80vh;
-    width: max(57vw, 700px);
 }
 
 .loader {
@@ -52,41 +50,40 @@ body {
 
 /* ------------------------pokemons------------------- */
 
-.pokemons {
+/* .pokemons {
     display: grid;
-    /* display: none; */
+    display: none;
     grid-template-columns: auto auto auto auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
     margin-bottom: 5vh;
-    /* height: max(1110px, 163vh);
-    width: max(720px, 58vw); */
-}
+    height: max(1110px, 163vh);
+    width: max(720px, 58vw);
+} */
 
 .pokemon {
-    display: flex;
+    /* display: flex;
     box-sizing: border-box;
     flex: 1;
     flex-direction: column;
     width: max(150px, 13vw);
     height: max(200px, 30vh);
-    background-color: grey;
-    margin: 10px;
-    border-radius: 10px;
+    background-color: grey; */
+    /* margin: 10px; */
+    /* border-radius: 10px; */
     text-decoration: none;
-    color: #000;
+    /* color: #000; */
 }
 
 .pokemon:hover {
     box-shadow: 0px 0px 0px 6px #a6a6a6;
 }
 
-.pokemon__image {
+/* .pokemon__image {
     display: flex;
     flex: 4;
     background-size: cover;
-    /* background-color: red; */
     height: max(150px, 15vh);
 }
 
@@ -98,13 +95,13 @@ body {
 .pokemon__name {
     display: flex;
     flex: 1;
-}
+} */
 
 
 
 /* ----------------------buttons---------------------- */
 
-.buttons {
+/* .buttons {
     display: flex;
     width: 30vw;
     justify-content: space-between;
@@ -114,20 +111,20 @@ body {
 .button {
     display: flex;
     padding: 1vh 2vw;
-    font-size: min(1.4vw, 15px);
+    font-size: min(2vw, 15px);
     border-radius: 20px;
     background-color: #fff;
 }
 
 .button--invisible {
     visibility: hidden;
-}
+} */
 
 
 
 /* --------------------pagging----------------------- */
 
-.pages {
+/* .pages {
     display: flex;
     width: 30vw;
     justify-content: space-around;
@@ -142,7 +139,7 @@ body {
     display: flex;
     font-size: min(1.4vw, 15px);
     cursor: pointer;
-    padding: 0 0.5vw;
+    padding: 0.7vh 0.5vw;
 }
 
 .pages__num--selected {
@@ -150,7 +147,9 @@ body {
     font-weight: bold;
     font-size: min(1.7vw, 17px);
     text-decoration: underline;
-}
+    background-color: #6aff00;
+    border-radius: 30px;
+} */
 
 
 
@@ -159,8 +158,8 @@ body {
 /* ------------------------second screen--------------------------- */
 
 .mini-container {
-    display: grid;
-    grid-template-columns: auto auto;
+    /* display: grid; */
+    /* grid-template-columns: auto auto; */
     /* background-color: #fff; */
 }
 
