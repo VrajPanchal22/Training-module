@@ -1,0 +1,60 @@
+.pokibox{
+    display: grid !important;
+    grid-template-columns: auto auto auto auto !important;
+    column-gap: 50px  !important;
+    row-gap: 50px  !important;
+    text-align: center  !important;
+    margin: 10rem  !important;
+    margin-top: 3rem  !important;
+    margin-bottom: 3rem  !important;
+}
+.card{
+    background-color: darkgrey;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.para-container{
+    text-align: center;
+}
+.pagination-container ul{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.pagination-container ul li.dots{
+    cursor: default;
+}
+.pagination-container ul li.prev{
+    border-radius: 25px 5px 5px 25px;
+}
+.pagination-container ul li.next{
+    border-radius: 5px 25px 25px 5px;
+}
+.pagination-container ul li{
+    list-style-type: none;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.pagination-container ul li.active,
+.pagination-container ul li.numb:hover,
+.pagination-container ul li.btn:hover{
+    color: azure;
+    background-color:#6b6161;;
+}
+.loader {
+    border: 16px solid #8796c9; /* Light grey */
+    border-top: 16px solid #a1db34; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    left: 847px;
+    top: 450px;
+    position: relative;
+    display: flex;
+  }
+  

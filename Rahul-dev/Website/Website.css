@@ -547,6 +547,6 @@ span{
     margin: 5px;
     cursor: pointer;
   }
-  #item3,#item4,#item5,#item8,#item7,#item6{
+  #item3,#item4,#item5{
     display: none;
   }
