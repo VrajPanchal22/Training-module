@@ -1,0 +1,52 @@
+const example = {
+    "foo":{
+        "bar":{
+            do: [{
+                "somthing":"dbdjdb",
+                "foo2":{
+                    "som":["kndkdnjd", "djkhdk","skjhskhs"]
+                }
+            }]
+        }
+    }
+}
+
+
+function objsort(obj,path,defaultvalue){
+    if(obj==null){
+        return defaultvalue
+    }
+    const split_str=path.split(".")
+    for (let i=0;i<split_str.length;++i){
+        if(obj == null){
+            return defaultvalue
+        }
+        const key = split_str[i];
+        obj = obj[key];
+    }
+    if(obj){
+        return obj;
+    }else{
+        return defaultvalue;
+    }
+}
+
+console.log("ds = ", objsort(example,"foo.bar.do.0.foodsd2",232));
+
+// using reduce
+
+function objsort1(obj,path,defaultvalue){
+    if(obj==null){
+        return defaultvalue
+    }
+    const split_str=path.split(".")
+    let reducestr = split_str.reduce((obj,key)=>obj?.[key],obj);
+    if(reducestr){
+        return reducestr;
+    }else{
+        return defaultvalue;
+    }
+}
+
+console.log("ds = ", objsort1(example,"foo.bar.doos",2001));
+
