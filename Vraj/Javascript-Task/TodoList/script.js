@@ -24,14 +24,15 @@ function renderTodos(todoList) {
     `
     <div value="${index}" class="list-group-item" id='outputDiv'>  
         <div>   
-            <span> ${index}. </span>
+            <span> ${index + 1}. </span>
             <span class="${data.completed? "checked" : ""}">  ${data.name} </span>
-            <input class="form-check-input" type="checkbox" id="check-${index}" data-id="${index}"  onclick="handleCheckbox(this)" ${data.completed? "checked" :""}>
+            <input class form-check-input" type="checkbox" id="check-${index}" data-id="${index}"  onclick="handleCheckbox(this)" ${data.completed? "checked" :""}>
         </div>
         <button class="del-btn" onclick="handleDelete(${index})" >Delete</button>
     </div>
     `
 })
+
 }
 
 formData.addEventListener('submit', (e) => {
@@ -42,9 +43,10 @@ formData.addEventListener('submit', (e) => {
         id: getNewId(),
         name: inputData,
         completed: false,
-        timeStamp: "" + new Date().getTime()
+        timeStamp: new Date().getTime()
     }
     todoList.push(todos);
+    filter(todoList)
     setTodo(todoList);
     renderTodos(todoList);
 })
@@ -65,10 +67,10 @@ function handleDeleteAll() {
 
 function filter(todoList){
     todoList = getTodo()
-    filterList = [...todoList].sort((a,b) => b.timeStamp - a.timeStamp)
+    filterList = [...todoList].sort((a,b) => b.timeStamp - a.timeStamp)        
     console.log(filterList) 
     setTodo(filterList);
-    renderTodos(filterList);
+    renderTodos(filterList);    
 }
 
 function completed(todoList){
@@ -108,8 +110,6 @@ function allTask(){
 function handleCheckbox(element) {
     let itemPos = element.getAttribute("data-id")
     let isChecked = element.checked;
-    // console.log('isChecked: ', isChecked);
-    // console.log('itemPos: ', itemPos);
     let todoList = getTodo();
     let newTodoList = todoList.map((elem, index) => {
         if(index === parseInt(itemPos)){
