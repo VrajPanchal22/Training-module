@@ -8,7 +8,7 @@ let sort_value1 = document.getElementById('sort');
 showTask(todo);
 function getNewId(){
   let getId = localStorage.getItem('idCount');
-  let newId = getId==null ? [] :JSON.parse(getId);
+  let newId =JSON.parse(getId);
   localStorage.setItem('idCount',JSON.stringify(newId+1));
   return newId=newId+1;
 }
@@ -80,10 +80,9 @@ function deleteAll(){
 
 //it change the checkbox_value for perticular task
 function handleCheckbox(element) {
+  console.log(element);
   let itemPos = element.getAttribute("data-id")
   let isChecked = element.checked;
-  console.log('isChecked: ', isChecked);
-  console.log('itemPos: ', itemPos);
   let todoList = getTodo();
   let newTodoList = todoList.map((elem, index) => {
       if(index === parseInt(itemPos)){
@@ -93,7 +92,6 @@ function handleCheckbox(element) {
           checkbox_value: isChecked,
           timestamp:elem.timestamp 
         }
-        console.log(newElem)
         return newElem   
       } else {
           return elem

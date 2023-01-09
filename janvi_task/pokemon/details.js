@@ -1,8 +1,6 @@
 id=window.location.search.slice(4);
-console.log(id);
 
 let data = JSON.parse(sessionStorage.getItem('maindata'))[id];
-console.log(data);
 printData(data);
 function printData(data){
     container=document.getElementById('pokemon_details');

@@ -13,36 +13,38 @@
     <div class="container flex">
         <div class="logo">to-do-list</div>
         <form action="">
-                <input type="text" placeholder="enter your task here" id="task">
-                <input  id="submit_btn" type="submit">
+            <input type="text" placeholder="enter your task here" id="task">
+            <input id="submit_btn" type="submit">
+    </div>
+    </form>
+
+
+    <div class="logo flex">
+        <h5>my task</h5>
+    </div>
+
+    <div class="flex">
+
+        <div class="dropdown flex">
+            <button onclick="showOptions()" class="dropbtn">filter</button>
+            <button id="delete-btn" onclick="deleteAll()">delete All</button>
+            sort:<input id="sort" type="checkbox" class="sort" onclick="sort()">
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#incompleted task" onclick="incompleted_task()">incompleted task</a>
+                <a href="#completed task" onclick="completed_task()">completed task</a>
+                <a href="#All task" onclick="all_task()">All task</a>
             </div>
-        </form>
-           
-
-        <div class="logo flex"> <h5>my task</h5></div>
-
-        <div class="flex">
-
-            <div class="dropdown flex">
-                <button onclick="showOptions()" class="dropbtn">filter</button>
-                <button id="delete-btn" onclick="deleteAll()">delete All</button>
-                sort:<input id="sort" type="checkbox" class="sort" onclick="sort()" >
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="#incompleted task" onclick="incompleted_task()">incompleted task</a>
-                  <a href="#completed task" onclick="completed_task()">completed task</a>
-                  <a href="#All task" onclick="all_task()">All task</a>
-                </div>
-            </div>
-    
-    
-             <form action="">
-                <table id="mytable">
-                   
-                </table>
-            </form>
-
         </div>
-       
+
+
+        <form action="">
+            <table id="mytable">
+
+            </table>
+        </form>
+
+    </div>
+
 
 
     </div>
