@@ -28,7 +28,6 @@ async function main() {
 
         if (checkExist()) {
 
-            showButtons();
             loadingEnd();
             loadPageNo()
 
@@ -48,11 +47,6 @@ async function main() {
         sessionStorage.setItem("count", mainObj.count)
 
         loadPageNo()
-
-
-        // set prev and next visible or not
-        showButtons();
-
 
         // get all pokemons one by one
         const responce = await Promise.all(mainObj.results.map(async (element) => {
@@ -133,14 +127,17 @@ function loadPokemons(pokemons) {
     element.innerHTML = ""
 
     pokemons.forEach(pokemon => {
-        element.innerHTML += `
-        <a class="pokemon" id="${pokemon.id}" href="/JayPatel/Pokemon/pokemon.html?id=${pokemon.id}">
-            <img class="pokemon__image" src="${pokemon.imageUrl}"
-                alt="pokemon">
-            <div class="pokemon__id">#${pokemon.id}</div>
-            <div class="pokemon__name">${pokemon.name}</div>
-        </a>
-    `
+        element.innerHTML += `  
+        <div class="d-flex col col-lg-3 col-md-4 col-sm-6 col-8 my-2">
+            <a href="/JayPatel/Pokemon/pokemon.html?id=${pokemon.id}" class="card text-bg-light border-secondary pokemon">
+                <img src="${pokemon.imageUrl}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">#${pokemon.id}</h5>
+                    <p class="card-text">${pokemon.name}</p>
+                </div>
+            </a>
+        </div>
+        `
     });
 }
 
@@ -160,25 +157,92 @@ function checkExist() {
 }
 
 
-// ----------------------buttons------------------------------
+
+
+// ---------------------------pagging-----------------------------
 
 function showButtons() {
     let prevButton = document.getElementById("prev");
     let nextButton = document.getElementById("next");
 
+    console.log("prev = ", prevButton);
+    console.log("next = ", nextButton);
+
     if (pageNo == 1) {
-        prevButton.classList.add("button--invisible")
+        prevButton.classList.add("disabled")
     }
     else {
-        prevButton.classList.remove("button--invisible")
+        prevButton.classList.remove("disabled")
     }
 
     if (pageNo == endPageNo) {
-        nextButton.classList.add("button--invisible")
+        nextButton.classList.add("disabled")
     }
     else {
-        nextButton.classList.remove("button--invisible")
+        nextButton.classList.remove("disabled")
     }
+
+}
+
+
+function loadPageNo() {
+
+    pageObj = document.getElementById("pages")
+
+    console.log(pageObj);
+    pageObj.innerHTML = ""
+
+    let start = (pageNo <= 4) ? 1 : pageNo - 3;
+    let end = (pageNo >= endPageNo - 4) ? endPageNo : pageNo + pageLimit - 3
+
+
+    // prev
+    pageObj.innerHTML += `
+        <li class="page-item" >
+            <a href="#" class="page-link" id="prev" onclick="prevClicked(this.id)" >
+                <span>&laquo;</span>
+            </a>
+        </li>
+    `
+
+    // for ...
+    if(start != 1) {
+        pageObj.innerHTML += `
+        <li class="page-item disabled" >
+            <a href="#" class="page-link">...</a>
+        </li>
+        `
+    }
+
+    // page numbers
+    for(let i = start ; i <= end ; i++) {
+        pageObj.innerHTML += `
+            <li class="page-item ${i == pageNo ? "active" : ""}" >
+                <a href="#" class="page-link" id="${i}" onclick="pageClicked(this.id)" > ${i} </a>
+            </li>
+        `
+    }
+
+    // for ...
+    if(end != endPageNo) {
+        pageObj.innerHTML += `
+        <li class="page-item disabled" >
+            <a href="#" class="page-link">...</a>
+        </li>
+        `
+    }
+
+    // next
+    pageObj.innerHTML += `
+            <li class="page-item">
+                <a href="#" class="page-link" id="next" onclick="nextClicked(this.id)">
+                    <span>&raquo;</span>
+                </a>
+            </li>
+    `
+
+    // to disable prev or next
+    showButtons()
 
 }
 
@@ -189,8 +253,9 @@ function nextClicked() {
     pageNo += 1
 
     sessionStorage.setItem("pageNo", "" + pageNo)
-    main();
+
     loadPageNo()
+    main();
 }
 
 function prevClicked() {
@@ -198,57 +263,24 @@ function prevClicked() {
     pageNo -= 1
 
     sessionStorage.setItem("pageNo", "" + pageNo)
-    main();
+
     loadPageNo()
+    main();
 }
 
 
+function pageClicked(id) {
+    id = parseInt(id)
 
-// ---------------------------pagging-----------------------------
+    offset = (limit * (id - 1)) + 1
+    pageNo = id
 
-function loadPageNo() {
+    sessionStorage.setItem("pageNo", "" + pageNo)
 
-    pageObj = document.getElementById("pages")
-
-    pageObj.innerHTML = ""
-
-    let start = (pageNo <= 3) ? 1 : pageNo - 2;
-    let end = (pageNo >= endPageNo - 3) ? endPageNo : pageNo + pageLimit - 2
-
-    for (let i = start; i <= end; i++) {
-
-        pageObj.innerHTML += `
-            <span class="pages__num ${i == pageNo ? "pages__num--selected" : ""}" id="${i}">
-                ${(i != 1 && i == pageNo - 2) ? ". . ." : ""}  ${i}  ${i == (pageNo + pageLimit - 2) ? ". . ." : ""}
-            </span>
-        `
-    }
+    loadPageNo()
+    main()
 
 }
-
-document.getElementById("pages").addEventListener("click", (event) => {
-
-    if (event.target.id != "pages") {
-
-        // console.log(event.target.id);
-        let id = parseInt(event.target.id)
-
-        offset = (limit * id) - limit + 1
-        // console.log("offset = ", offset);
-
-        pageNo = id
-        console.log("Page no = ", pageNo);
-
-        sessionStorage.setItem("pageNo", "" + pageNo)
-
-        loadPageNo()
-        main()
-
-    }
-})
-
-
-
 
 // -----------------------loading----------------------------------
 
@@ -280,10 +312,10 @@ function loadingStart() {
 
 function loadingEnd() {
     // setTimeout(() => {
-    clearInterval(loading)
-    document.getElementById("pokemons").style.display = 'grid'
-    document.getElementById("loaders").style.display = 'none'
-    // }, 1000);
+        clearInterval(loading)
+        document.getElementById("pokemons").style.display = 'flex'
+        document.getElementById("loaders").style.display = 'none'
+    // }, 10000);
 }
 
 

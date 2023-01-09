@@ -28,7 +28,7 @@ function right(){
 setInterval(()=>{
     right();
 
-},5000)
+},3000)
     
    
     

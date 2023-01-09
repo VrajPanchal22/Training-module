@@ -6,6 +6,17 @@ window.onload = function (){
     }
 }
 function addElement(){
+    if(document.querySelector('.box').checked){
+        elements.unshift(document.querySelector('.addTxt').value.trim());
+        if(localStorage.getItem("todo-elements")){
+            localStorage.setItem("todo-elements",JSON.stringify(elements));
+        }
+        else{
+            localStorage.setItem("todo-elements",JSON.stringify(elements));
+        }
+
+    }
+    else{
     if(document.querySelector('.addTxt').value.trim()!= ""){
         
         elements.push(document.querySelector('.addTxt').value.trim());
@@ -19,7 +30,9 @@ function addElement(){
             localStorage.setItem("todo-elements",JSON.stringify(elements));
         }
     }
+    }
     Display();
+
 
 }
 function Display(){
@@ -125,9 +138,6 @@ function sorted(){
         elements =elements.reverse();
         Display2(elements);
         elements = JSON.parse(localStorage.getItem('todo-elements'));
-        
-
-
     }
     else{
         Display2(elements);
