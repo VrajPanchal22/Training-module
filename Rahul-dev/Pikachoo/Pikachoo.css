@@ -1,0 +1,123 @@
+.container{
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    height: 2000px;
+    width: 80%;
+    border: 2px solid black;
+    margin: auto; 
+    background: black; 
+
+}
+.item{
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    row-gap: 0;
+    column-gap: 0; 
+     margin: auto;
+    cursor: pointer;
+    background: rgb(200,200,200);
+
+}
+.item1{
+    height: 100px;
+    width: 100px;
+}
+.itemclass
+{
+    width: 300px;
+    height: 270px;
+   
+}
+.pagebutton{
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background:#b53860;
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: 800;
+    
+
+}
+.buttoncontainer{
+    display: flex;
+    height: 100px;
+    /* position: absolute;
+    left:0;
+    top:0; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.prevnext{
+    height: 500px;
+    text-align: center;
+
+}
+.item a{
+    display: block;
+    border: 2px solid pink;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    line-height: 300px;
+    text-decoration: none;
+    z-index: 0;
+    position: absolute;
+    opacity: 0.001;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+li{
+    list-style-type:none ;
+    
+
+
+}
+.itembutton:hover{
+    /* text-decoration: underline; */
+    border-radius: 25%;
+    background-color: #b53860;
+    color: white;
+    transform: scale(1.1);
+}
+.current{
+    text-decoration: underline;
+    /* border:2px solid black; */
+    border-radius: 25%;
+    background-color: #b53860;
+    color: white;
+    transform: scale(1.1);  
+}
+#prev,#next{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background:#b53860;
+    height: 30px;
+    width: 50px;
+    border-radius:2px ;
+}
+
+/* 
+ */
+ #loader 
+ {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+ }
+ 
+ 
+  

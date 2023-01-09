@@ -11,39 +11,47 @@ let pagethree = document.getElementById("page3");
 let count;
 let pokemonimg = [];
 let pokiobj;
+let limit = 20;
 let play = 0;
 
+if (sessionStorage.getItem("play")) {
+  play = JSON.parse(sessionStorage.getItem("play"));
+} else {
+  play = 0;
+}
+console.log("plauy == ", play);
 
 // card.innerHTML = ``;
 // let url = ;
 function getname() {
+  loadingStart();
   fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${play}&limit=20`)
     .then((response) => response.json())
     .then((json) => {
-      count=json.count
-    Promise.all( json.results.map((ele) => {
+      count = json.count;
+      Promise.all(
+        json.results.map((ele) => {
+          return getimg(ele.url);
+        })
+      ).then((res) => {
+        //console.log(pokemonimg);
+        console.log("play = ", play);
 
-        return getimg(ele.url)
-      })
-    ).then(res=> {
-      console.log(pokemonimg);
-      console.log("play = ", play);
-      
-      //console.log("splice:",pokemonimg.splice(0,20));
-      let temp = pokemonimg.slice(play+1,play+21)
-      console.log("temp = ", temp);
-      temp.forEach(element=>{
-        //console.log(element)
-        mapping(element);
-      })
-      sessionStorage.setItem("user", JSON.stringify(pokemonimg));
+        //console.log("splice:",pokemonimg.splice(0,20));
+        let temp = pokemonimg.slice(play + 1, play + 21);
+        //console.log("temp = ", temp);
+        sessionStorage.setItem("play", play);
+        temp.forEach((element) => {
+          //console.log(element)
+          mapping(element);
+          loadingEnd();
+        });
+        sessionStorage.setItem("user", JSON.stringify(pokemonimg));
+      });
     });
-      
-    });
-    sessionStorage.clear();
+  // sessionStorage.clear();
 }
-getname();
-
+// getname();
 
 function getimg(url) {
   return fetch(url)
@@ -66,7 +74,7 @@ function getimg(url) {
         height: res.height,
         weight: res.weight,
       };
-      console.log("dsad = ", pokiobj.id);
+      //console.log("dsad = ", pokiobj.id);
       //mapping(pokiobj);
       pokemonimg[pokiobj.id] = pokiobj;
       // console.log(pokemonimg);
@@ -79,7 +87,7 @@ function mapping(obj) {
   let id = obj.id;
   let li = "";
   li += `
-  <a class="pokemon" id="${id}" href="index2.html?id=${id}" style="text-decoration: none;">
+  <a class="pokemon" id="${id}" href="index2.html?id=${id}"  style="text-decoration: none;">
     <div class="card" id="card" style="width: 18rem;">
       <img src="${obj.imgurl}" class="card-img-top" alt="...">
       <div> ${id} </div>
@@ -90,7 +98,6 @@ function mapping(obj) {
   </a>`;
   taskbox.innerHTML += li;
 }
-
 
 nextbtn.addEventListener("click", () => {
   taskbox.innerHTML = "";
@@ -106,7 +113,6 @@ nextbtn.addEventListener("click", () => {
 //   getname();
 // });
 
-
 prevbtn.addEventListener("click", () => {
   taskbox.innerHTML = "";
   //url = `https://pokeapi.co/api/v2/pokemon/?offset=${play}&limit=20`;
@@ -115,59 +121,88 @@ prevbtn.addEventListener("click", () => {
   //play -= 20;
 });
 
-
-
 // pagination script
 
-const ulTag=document.querySelector('ul');
-let totalpages=58;
+const ulTag = document.querySelector("ul");
+let totalpages = 58;
+function element(totalpages, page) {
+  let liTag = "";
+  let activeLi;
+  let beforePages = page - 1;
+  let afterPages = page + 1;
+  taskbox.innerHTML = "";
+  play = limit * (page - 1);
+  getname();
 
-function element(totalpages,page){
-let liTag='';
-let activeLi;
-let beforePages = page - 1;
-let afterPages = page + 1;
-if(page>1){
-  liTag+=`<li class="btn prev" onclick="element(totalpages,${page-1})"><span><i class="fa fa-arrow-left" aria-hidden="true"></i>Prev</span></li>`
+  if (page > 1) {
+    liTag += `<li class="btn prev" onclick="element(totalpages,${
+      page - 1
+    })"><span><i class="fa fa-arrow-left" aria-hidden="true"></i>Prev</span></li>`;
+    // sessionStorage.setItem("play", play);
+  }
+
+  if (page > 2) {
+    liTag += `<li class="numb " onclick="element(totalpages,1)"><span>1</span></li>`;
+    // sessionStorage.setItem("play", play);
+    if (page > 3) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
+
+  if (page == totalpages) {
+    beforePages = beforePages - 2;
+  } else if (page == totalpages - 1) {
+    beforePages = beforePages - 1;
+  }
+
+  if (page == 1) {
+    afterPages = afterPages + 2;
+  } else if (page == 2) {
+    afterPages = afterPages + 1;
+  }
+
+  for (let pageLength = beforePages; pageLength <= afterPages; pageLength++) {
+    if (pageLength > totalpages) {
+      continue;
+    }
+    if (pageLength == 0) {
+      pageLength = pageLength + 1;
+    }
+    if (page == pageLength) {
+      activeLi = "active";
+    } else {
+      activeLi = "";
+    }
+    liTag += `<li class="numb ${activeLi}" onclick="element(totalpages,${pageLength})">${pageLength}<span></span></li>`;
+    // sessionStorage.setItem("play", play);
+  }
+
+  if (page < totalpages - 1) {
+    if (page < totalpages - 2) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="numb " onclick="element(totalpages,${totalpages})"><span>${totalpages}</span></li>`;
+    // sessionStorage.setItem("play", play);
+  }
+
+  if (page < totalpages) {
+    liTag += `<li class="btn next" onclick="element(totalpages,${
+      page + 1
+    })"><span>Next<i class="fa fa-arrow-right" aria-hidden="true"></i></span></li>`;
+  }
+  sessionStorage.setItem("play", play);
+  ulTag.innerHTML = liTag;
+
+  //let loaderBtn = document.getElementsByClassName('numb');
+}
+element(totalpages, (play/limit) + 1);
+
+function loadingStart() {
+  document.querySelector(".whole").style.display = "none";
+  document.querySelector(".loader").style.display = "flex";
 }
 
-if(page > 2){
-  liTag +=`<li class="numb " onclick="element(totalpages,1)"><span>1</span></li>`;
-  if(page > 3){
-    liTag +=`<li class="dots"><span>...</span></li>`;
-  }
+function loadingEnd() {
+  document.querySelector(".whole").style.display = "grid";
+  document.querySelector(".loader").style.display = "none";
 }
-
-
-
-for(let pageLength = beforePages; pageLength<= afterPages; pageLength++){
-  if(pageLength > totalpages){
-    continue;
-  }
-  if(pageLength == 0){
-    pageLength = pageLength + 1;
-  }
-  if(page == pageLength){
-    activeLi = "active";
-  }
-  else{
-    activeLi = ""
-  }
-  liTag+=`<li class="numb ${activeLi}" onclick="element(totalpages,${pageLength})">${pageLength}<span></span></li>`
-}
-
-if(page < totalpages-1){
-  if(page < totalpages-2){
-    liTag +=`<li class="dots"><span>...</span></li>`;
-  }
-  liTag +=`<li class="numb " onclick="element(totalpages,${totalpages})"><span>${totalpages}</span></li>`;
-}
-
-
-if(page<totalpages){
-  liTag+=`<li class="btn next" onclick="element(totalpages,${page+1})"><span>Next<i class="fa fa-arrow-right" aria-hidden="true"></i></span></li>`
-}
-ulTag.innerHTML=liTag;
-}
-element(totalpages,5)
-

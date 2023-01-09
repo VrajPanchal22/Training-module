@@ -1,0 +1,59 @@
+.container
+{
+    width: 1200px;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    background: red;
+    margin-top:5%;
+    margin-bottom: 5%;
+
+
+}
+.imgcont{
+    background-color: rgb(199,199,199);
+    width: 400px;
+    height: 700px;
+}
+.card{
+    width: 600px;
+    height: 400px;
+    background: #30a7d7;
+    margin-top:12%;
+    margin-left:14%;
+    border-radius: 10px;
+    
+}
+img{
+    margin: auto;
+    height: 600px;
+    width:400px;
+}
+
+p{
+    color: whitesmoke;
+    font-size:20px ;
+    font-weight: bold;
+}
+#name{
+    text-align: center;
+    font-weight: 900;
+    font-size: 50px;
+}
+.cardheight{
+    /* border: 2px solid black; */
+    padding: 10px;
+    height: 33%;
+}
+.cardweight{
+    /* border: 2px solid black; */
+    padding: 10px;
+    height: 33%;
+}
+.identifier{
+    /* border: 2px solid black; */
+    height: 33%;
+    padding-left: 10px;
+}
+

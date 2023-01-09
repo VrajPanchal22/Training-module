@@ -12,13 +12,13 @@ console.log("data = ", document.getElementById("pokemon"));
 
 
 document.getElementById("pokemon").innerHTML = `
-    <h1 class="heading">${pokemonObj.name}</h1>
+    <h1 class="heading text-center">${pokemonObj.name}</h1>
 
-    <div class="mini-container" id="pokemon">
-        <div class="pokemon__img">
+    <div class="mini-container row justify-content-center" id="pokemon">
+        <div class="pokemon__img col-md-5 col-sm-10 col-10">
             <img class="img" src="${pokemonObj.imageUrl}" alt="pokemon">
         </div>
-        <div class="pokemon__properties">
+        <div class="pokemon__properties col-md-5 col-sm-10 col-10">
             <div class="pokemon__property">
                 <span class="property__name" >Height</span>
                 <span class="property__value" >${pokemonObj.height}</span>

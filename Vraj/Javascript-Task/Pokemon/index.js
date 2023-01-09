@@ -1,10 +1,17 @@
 let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20"
-// const imgUrl = "http://192.168.29.118:3004/images/pokemon/other/home/" //3.png" 
-
+loader = document.querySelector('.loader')
 pageNum=1
+
+
+// Main Functions
 async function main() {
     try {
+    loadingStart()
         const callEnd = await getPokemons()
+        limit = 20
+        count = callEnd.count
+        sessionStorage.setItem("count", "" + count)
+        sessionStorage.setItem("limit", "" + limit)
         Promise.all(callEnd.results.map(async (element) => {    
             const pokemon = await getPokemon(element.url)
             return pokemon
@@ -15,8 +22,11 @@ async function main() {
             response.forEach((ele)=> {
                 loadPokemon(ele)
             })
+            loadingEnd()
         })
+
     }
+
     catch (err) {
         console.log("Error = ", err);
     }
@@ -26,7 +36,6 @@ async function getPokemons() {
     try {
         const responce = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${(pageNum-1) * 20}&limit=20`)
         const jsonRes = await responce.json();
-        // console.log("Main URL: ",jsonRes)
         return jsonRes
     }
     catch (err) {
@@ -53,15 +62,14 @@ function loadPokemon(pokemon) {
             <img class="pokemon__image" src="${imgSrc}"
                 alt="Error">
             <div class="pokemon__id">#${id}</div>
-            <div class="pokemon__name">${pokemon.name}</div>
+            <div class="pokemon__name" style="text-transform:capitalize;">${(pokemon.name)}</div>
         </a>
     `
 }
 
+// Pagging
 let ul = document.querySelector('ul');
-let allPages = 1154;
-paging(allPages, sessionStorage.getItem("PageNum") ? JSON.parse(sessionStorage.getItem("PageNum")) : 1);
-function paging(allPages, page){
+function paging(totalPages, page){
     sessionStorage.clear()
     let li = '';
     let beforePages = page - 1;
@@ -72,12 +80,17 @@ function paging(allPages, page){
     document.getElementById("pokemons").innerHTML = ''
     main()
 
+    if(page > 2){
+        li += `<li class="btn" onclick="paging(totalPages,1)"> 1 </i></li>`;
+        sessionStorage.setItem("PageNum", "" + page)        
+    }
     if(page > 1){
-        li += `<li class="btn" onclick="paging(allPages, ${page-1})"> < </i></li>`;
+        li += `<li class="btn" onclick="paging(totalPages, ${page-1})"> < </i></li>`;
         sessionStorage.setItem("PageNum", "" + page)
     }
+  
     for (let pageLength = beforePages; pageLength <= afterPages; pageLength++){
-        if(pageLength > allPages){
+        if(pageLength > totalPages){
             continue;
         }
         if(pageLength == 0){
@@ -91,12 +104,33 @@ function paging(allPages, page){
         }
         li += `<li class="btn numb ${liActive}" ><span>${pageLength}</span></li>`
     }
-    if(page < allPages){
-        li += `<li class="btn" onclick="paging(allPages, ${page+1})" > > </i></li>`;
+    if(page < totalPages){
+        li += `<li class="btn" onclick="paging(totalPages, ${page+1})" > > </i></li>`;
+        sessionStorage.setItem("PageNum", "" + page)
+    }
+    if(page < totalPages-1){
+        li += `<li class="btn" onclick="paging(totalPages, ${totalPages})" > ${totalPages}  </i></li>`;
         sessionStorage.setItem("PageNum", "" + page)
     }
     ul.innerHTML = li;
 }
 
 
+count = sessionStorage.getItem("count")
+limit = sessionStorage.getItem("limit")
+let totalPages = Math.ceil(count/limit);
+page = sessionStorage.getItem("PageNum") ? JSON.parse(sessionStorage.getItem("PageNum")) : 1
+paging(totalPages, page);
+
+
+// Loader
+function loadingStart() {
+    document.querySelector(".main").style.display = 'none'
+    document.querySelector(".loader").style.display = 'flex'
+}
+
+function loadingEnd() {
+    document.querySelector(".main").style.display = 'grid'
+    document.querySelector(".loader").style.display = 'none'
+}
 
