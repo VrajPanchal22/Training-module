@@ -43,5 +43,18 @@
 .pagination-container ul li.numb:hover,
 .pagination-container ul li.btn:hover{
     color: azure;
-    background-color: aquamarine;
+    background-color:#6b6161;;
 }
+.loader {
+    border: 16px solid #8796c9; /* Light grey */
+    border-top: 16px solid #a1db34; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    left: 847px;
+    top: 450px;
+    position: relative;
+    display: flex;
+  }
+  

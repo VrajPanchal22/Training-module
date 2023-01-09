@@ -1,3 +1,4 @@
+
 id = window.location.search;
 
 newid = id.slice(4)
@@ -26,3 +27,7 @@ font-size: 2rem;">
 <p> Wight: ${pokemone[newid].weight}</p>
 </div>
 `
+
+function goback(){
+history.go(-1);
+}

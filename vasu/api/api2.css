@@ -1,0 +1,14 @@
+.container{
+
+}
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+   
+}
+.info{
+    font-size: 2rem;
+    margin-top: 6rem;
+}
