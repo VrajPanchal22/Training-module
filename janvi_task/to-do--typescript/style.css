@@ -1,0 +1,104 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body{
+    background-color:rgb(224, 204, 247) ;
+}
+
+table{
+    border: 2px solid black;
+    width: 50rem;
+    background-color:azure;
+    font-size: 25px;
+    border-radius: 10px;
+
+}
+
+.logo{
+    font-size: 40px;
+}
+
+#task {
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+p{
+    font-size: 30px;
+    margin: 10px;
+}
+.task_input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#submit_btn{
+    font-size: 30px;
+    height: 40px;
+    width: 120px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(83, 207, 83);
+}
+tr:nth-child(odd){
+    background-color: rgb(207, 249, 247);
+}
+button{
+    width: 60px;
+    border-radius: 10px;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 130px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .show {display: block;}
+
+  .checked{
+    text-decoration: line-through;
+  }
+
+#delete-btn{
+    height: 3rem;
+    width:6rem;
+    background-color: red;
+    color:white;
+    border: none;
+    margin :0px 2rem;
+}
+
+  
