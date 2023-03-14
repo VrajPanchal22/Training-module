@@ -12,19 +12,26 @@
 
 <body>
     <div class="container">
-        <div class="my todo">
+       <!--<div class="my todo">--->
             <h1>hey vasu your To Do list?????</h1>
-            <div class="inputvalue">
-                <input class="inputval" type="text" placeholder="list....." >
-                <button class="button">+</button>
-            </div>
+            <form action=""class="todo-form">
+                <div class="inputvalue">
+                    <input class="inputval" type="text" placeholder="list.....">
+                    <button class="button" type="submit">Add</button>
+                
+                    </div>
+                <div class="todolist">
+                </div>
+                <button class="cleartask" onclick="clearTask()">Clear all tasks</button>
+            </form>
+            <div class="file-list">
+               <ul class="todo-items">
 
-            <div class="todolist">
+               </ul>
             </div>
-            <button class="cleartask" onclick="clearTask()">Clear all tasks</button>
-        </div>
+        <!--</div>-->
     </div>
-        <script src="todo.js"></script>
+    <script src="todo.js"></script>
 </body>
 
 </html>
