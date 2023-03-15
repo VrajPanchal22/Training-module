@@ -1,7 +1,8 @@
 const initialData = {
-  List: [],
+  List: localStorage.getItem("Todolist")
+    ? JSON.parse(localStorage.getItem("Todolist"))
+    : [],
 };
-
 //const [list,setList]=usestate([])
 
 const TodoReducer = (state = initialData, action) => {
