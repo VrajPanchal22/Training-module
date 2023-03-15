@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="typescript.js"></script>
+</head>
+
+<body>
+    <div id="todolist" class="todolist">
+        <h1>To Do List</h1>
+
+        <form class="todolist__newtask">
+            <input type="text" name="task" id="newtask">
+            <button type="submit">+</button>
+        </form>
+
+        <ul id="tasks" class="todolist__tasks">
+            <!-- tasks -->
+        </ul>
+
+        <br>
+        <div class="buttons buttons--width">
+            <button class="buttons__btn" onclick="deleteAll()">deleteAll</button>
+            <button id="sort" class="buttons__btn" onclick="sort()">sort</button>
+        </div>
+        <div id="buttons" class="buttons">
+            <button class="buttons__btn" id="btn-1" onclick="showCompletedTasks(id)">Completed Tasks</button>
+            <button class="buttons__btn" id="btn-2" onclick="showPendingTasks(id)">Pending Tasks</button>
+            <button class="buttons__btn button__btn--clicked" id="btn-3" onclick="showAllTasks(id)">All Tasks</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

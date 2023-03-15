@@ -66,6 +66,10 @@ function loadTask() {
 document.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    if(document.getElementById("newtask").value === "") {
+        return
+    }
+
     console.log(tasklist[tasklist.length - 1]);
     newTaskObj = {
         id: tasklist.length != 0 ? tasklist[tasklist.length - 1].id + 1 : 0,

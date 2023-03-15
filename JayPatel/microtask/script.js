@@ -56,6 +56,7 @@ const example = {
     }
 }
 
+
 const obj = {
     "1": 2,
     "2": {
@@ -115,6 +116,13 @@ function getFieldValue(object, path, defaultValue = undefined) {
     return path.split(".").reduce((a, b, index) => a && a[b], object) || defaultValue
 }
 
+function getValueKey(object, path, defaultValue = undefined) {
+    return path.split(".").reduce((obj,key, index)=>{
+        console.log(" obj = ", obj?.[key], ", index = ", index);
+        return obj?.[key]
+    }, object) || defaultValue;
+}
+
 
 // function getValueFromObjByPathArray(object, path, defaultValue = undefined) {
 
@@ -133,11 +141,20 @@ function getFieldValue(object, path, defaultValue = undefined) {
 
 // }
 
-console.log("value = ", getValueFromObjByPathArray(obj, "2.add.nearByCity", 1000));
-console.log("value = ", getValueFromObjByPathArray(example, "foo.bar.do.0.somthing", 1000));
-console.log("value = ", getFieldValue(example, "foo.bar.do.0.somthing.som", 1000));
+console.log("value1 = ", getValueFromObjByPathArray(obj, "2.add.nearByCity.3", 1000));
+console.log("value2 = ", getValueFromObjByPathArray(example, "foo.bar.do.0.somthing", 1000));
+console.log("value3 = ", getFieldValue(example, "foo.bar.do.0.foo2.som", 1000));
+console.log("value4 = ", getValueKey(example, "foo.bar.do.0.foo2d.som", 1000));
 
 
+
+// destructuring
+const {name: n, fname: f} = {
+    "name": "jay",
+    "fname": "hello"
+}
+
+console.log(n + " " + f);
 
 
 

@@ -175,7 +175,7 @@ body {
 }   
 
 .img {
-    height: 15vw;
+    height: max(150px, 15vw);
     padding: 10px 5vw;
 }
 
@@ -198,9 +198,9 @@ body {
 
 .property__name {
     color: #fff;
-    font-size: min(1vw, 2.5vh);
+    font-size: min(3vw, 2.5vh);
 }
 
 .property__value {
-    font-size: min(1.3vw, 3vh);
+    font-size: min(3.3vw, 3vh);
 }   
